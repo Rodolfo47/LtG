@@ -1,0 +1,32 @@
+Your inserted inputs on [SSPACE_Standard_v3.0_linux] at Sat Jul 25 10:12:27 2020:
+Required inputs: 
+	-l = ../../bin/lib36Lt.76.txt
+		Number of paired files = 1
+	-s = ../spades/36Lt.76/scaffolds.fasta
+	-b = 36Lt.76
+
+Optional inputs:
+	-x = 1
+	-z = 0
+	-k = 5
+	-g = 0
+	-a = 0.7
+	-n = 15
+	-T = 20
+	-p = 0
+
+Contig extension inputs:
+	-o = 20
+	-m = 32
+	-r = 0.9
+
+
+=>Sat Jul 25 10:12:27 2020: Reading, filtering and converting input sequences of library file initiated
+
+------------------------------------------------------------
+
+=>Sat Jul 25 10:18:06 2020: Extending of contigs with unmapped reads
+
+=>Sat Jul 25 10:18:06 2020: Building BWA index for contigs
+
+=>Sat Jul 25 10:18:52 2020: Mapping reads to contigs with BWA

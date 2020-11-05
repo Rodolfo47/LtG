@@ -1,0 +1,87 @@
+/usr/local/bioconda/envs/quast/bin/quast 11Lt.canu.fasta 11Lt.sspace.fasta 11Lt.gapfiller.fasta ../11Lt.pilon1.fasta ../11Lt.pilon2.fasta ../11Lt.pilon3.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-3.10.0-327.el7.x86_64-x86_64-with-redhat-7.2-Maipo (linux_64)
+  Python version: 3.6.7
+  CPUs number: 32
+
+Started: 2020-03-25 14:10:14
+
+Logging to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/quast.log
+NOTICE: Maximum number of threads is set to 8 (use --threads option to set it manually)
+
+CWD: /space21/PGE/rangeles/LtG/out/pilon/quast
+Main parameters: 
+  MODE: default, threads: 8, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  1  11Lt.canu.fasta ==> 11Lt.canu
+  2  11Lt.sspace.fasta ==> 11Lt.sspace
+  3  11Lt.gapfiller.fasta ==> 11Lt.gapfiller
+  4  ../11Lt.pilon1.fasta ==> 11Lt.pilon1
+  5  ../11Lt.pilon2.fasta ==> 11Lt.pilon2
+  6  ../11Lt.pilon3.fasta ==> 11Lt.pilon3
+
+2020-03-25 14:10:21
+Running Basic statistics processor...
+  Contig files: 
+    1  11Lt.canu
+    2  11Lt.sspace
+    3  11Lt.gapfiller
+    4  11Lt.pilon1
+    5  11Lt.pilon2
+    6  11Lt.pilon3
+  Calculating N50 and L50...
+    1  11Lt.canu, N50 = 171948, L50 = 180, Total length = 111691875, GC % = 46.65, # N's per 100 kbp =  0.00
+    2  11Lt.sspace, N50 = 240886, L50 = 133, Total length = 112187514, GC % = 46.65, # N's per 100 kbp =  441.88
+    3  11Lt.gapfiller, N50 = 240886, L50 = 133, Total length = 112192900, GC % = 46.65, # N's per 100 kbp =  356.97
+    4  11Lt.pilon1, N50 = 238466, L50 = 134, Total length = 112185270, GC % = 46.66, # N's per 100 kbp =  352.19
+    5  11Lt.pilon2, N50 = 238469, L50 = 134, Total length = 112180393, GC % = 46.66, # N's per 100 kbp =  349.53
+    6  11Lt.pilon3, N50 = 238470, L50 = 134, Total length = 112181345, GC % = 46.66, # N's per 100 kbp =  348.50
+  Drawing Nx plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/GC_content_plot.pdf
+  Drawing 11Lt.canu GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/11Lt.canu_GC_content_plot.pdf
+  Drawing 11Lt.sspace GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/11Lt.sspace_GC_content_plot.pdf
+  Drawing 11Lt.gapfiller GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/11Lt.gapfiller_GC_content_plot.pdf
+  Drawing 11Lt.pilon1 GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/11Lt.pilon1_GC_content_plot.pdf
+  Drawing 11Lt.pilon2 GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/11Lt.pilon2_GC_content_plot.pdf
+  Drawing 11Lt.pilon3 GC content plot...
+    saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/basic_stats/11Lt.pilon3_GC_content_plot.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2020-03-25 14:10:52
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-03-25 14:10:59
+RESULTS:
+  Text versions of total report are saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/report.html
+  PDF version (tables and plots) is saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/report.pdf
+  Icarus (contig browser) is saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/icarus.html
+  Log is saved to /space21/PGE/rangeles/LtG/out/pilon/quast/quast_results/results_2020_03_25_14_10_14/quast.log
+
+Finished: 2020-03-25 14:10:59
+Elapsed time: 0:00:44.915597
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

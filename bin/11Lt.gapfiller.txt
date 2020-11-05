@@ -1,0 +1,2 @@
+lib1 bwa ../data/11Lt.300.R1.fastq ../data/11Lt.300.R2.fastq 700 0.75 FR
+lib2 bwa ../data/11Lt.76.R1.fastq ../data/11Lt.76.R2.fastq 150 0.75 FR

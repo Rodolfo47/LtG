@@ -1,0 +1,1 @@
+lib1 bwa ../../data/11Lt.76.R1_val_1.fq ../../data/11Lt.76.R2_val_2.fq 150 0.1 FR

@@ -1,0 +1,984 @@
+mkdir: cannot create directory '33': File exists
+ABYSS -k33 -q3    --coverage-hist=coverage.hist -s 36Lt.k33-bubbles.fa  -o 36Lt.k33-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 
+ABySS 2.0.1
+ABYSS -k33 -q3 --coverage-hist=coverage.hist -s 36Lt.k33-bubbles.fa -o 36Lt.k33-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq
+Reading `../../../data/36Lt.76.R1_val_1.fq'...
+`../../../data/36Lt.76.R1_val_1.fq': discarded 24270 reads shorter than 33 bases
+`../../../data/36Lt.76.R1_val_1.fq': discarded 1 reads containing non-ACGT characters
+Reading `../../../data/36Lt.76.R2_val_2.fq'...
+`../../../data/36Lt.76.R2_val_2.fq': discarded 215853 reads shorter than 33 bases
+`../../../data/36Lt.76.R2_val_2.fq': discarded 15061 reads containing non-ACGT characters
+Loaded 1073920301 k-mer
+Minimum k-mer coverage is 36
+Using a coverage threshold of 12...
+The median k-mer coverage is 143
+The reconstruction is 49185499
+The k-mer coverage threshold is 11.9583
+Setting parameter e (erode) to 12
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 11.9583
+Generating adjacency
+Added 2160605782 edges.
+Eroding tips
+Eroded 880410616 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 157 k-mer in 157 tips.
+Pruning tips shorter than 2 bp...
+Pruned 132 k-mer in 66 tips.
+Pruning tips shorter than 4 bp...
+Pruned 268 k-mer in 78 tips.
+Pruning tips shorter than 8 bp...
+Pruned 354 k-mer in 59 tips.
+Pruning tips shorter than 16 bp...
+Pruned 434 k-mer in 38 tips.
+Pruning tips shorter than 32 bp...
+Pruned 663 k-mer in 30 tips.
+Pruning tips shorter than 33 bp...
+Pruned 66 k-mer in 3 tips.
+Pruning tips shorter than 33 bp...
+Pruned 431 tips in 7 rounds.
+Marked 25648515 edges of 11971813 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 11.9583)
+Found 193507238 k-mer in 14538258 contigs before removing low-coverage contigs.
+Removed 144516584 k-mer in 6878814 low-coverage contigs.
+Split 13757600 ambigiuous branches.
+Eroding tips
+Eroded 232321 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 10761 k-mer in 10761 tips.
+Pruning tips shorter than 2 bp...
+Pruned 12919 k-mer in 8842 tips.
+Pruning tips shorter than 4 bp...
+Pruned 29233 k-mer in 11315 tips.
+Pruning tips shorter than 8 bp...
+Pruned 66186 k-mer in 13441 tips.
+Pruning tips shorter than 16 bp...
+Pruned 131878 k-mer in 13045 tips.
+Pruning tips shorter than 32 bp...
+Pruned 164687 k-mer in 7914 tips.
+Pruning tips shorter than 33 bp...
+Pruned 528 k-mer in 36 tips.
+Pruning tips shorter than 33 bp...
+Pruned 65354 tips in 7 rounds.
+Popping bubbles
+Removed 18528 bubbles.
+Removed 18528 bubbles
+Marked 843416 edges of 401461 ambiguous vertices.
+Left 545 unassembled k-mer in circular contigs.
+Assembled 47576494 k-mer in 483815 contigs.
+Removed 1025577787 k-mer.
+The signal-to-noise ratio (SNR) is -13.2664 dB.
+AdjList    -k33 -m50 --dot 36Lt.k33-1.fa >36Lt.k33-1.dot
+abyss-filtergraph  --dot   -k33 -g 36Lt.k33-2.dot1 36Lt.k33-1.dot 36Lt.k33-1.fa >36Lt.k33-1.path
+MergeContigs   -k33 -g 36Lt.k33-2.dot -o 36Lt.k33-2.fa 36Lt.k33-1.fa 36Lt.k33-2.dot1 36Lt.k33-1.path
+PopBubbles  --dot -j18 -k33  -p0.9  -g 36Lt.k33-3.dot 36Lt.k33-2.fa 36Lt.k33-2.dot >36Lt.k33-2.path
+MergeContigs   -k33 -o 36Lt.k33-3.fa 36Lt.k33-2.fa 36Lt.k33-2.dot 36Lt.k33-2.path
+The minimum coverage of single-end contigs is 11.6667.
+The minimum coverage of merged contigs is 13.2581.
+Consider increasing the coverage threshold parameter, c, to 13.2581.
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	36Lt.k33-2.path 36Lt.k33-1.fa >36Lt.k33-indel.fa
+ln -sf 36Lt.k33-3.fa 36Lt.k33-unitigs.fa
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k33-3.fa \
+	|abyss-fixmate   -l40  -h 76lib-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j18 -k33 -l40 -s1000 -n10   -o 76lib-3.dist 76lib-3.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    8722961  6.91%
+Singleton   19951342  15.8%
+FR          68310071  54.1%
+RF              2889  0.00229%
+FF             43554  0.0345%
+Different   29255220  23.2%
+Total      126286037
+abyss-todot  --dist -e 36Lt.k33-3.fa 76lib-3.dist >36Lt.k33-3.dist
+Overlap  --dot   -k33 -g 36Lt.k33-4.dot -o 36Lt.k33-4.fa 36Lt.k33-3.fa 36Lt.k33-3.dot 36Lt.k33-3.dist
+Overlap: 21
+Scaffold: 65
+No overlap: 16
+Insignificant (<5bp): 12
+Homopolymer: 7
+Motif: 0
+Ambiguous: 0
+SimpleGraph    -j18 -k33 -o 36Lt.k33-4.path1 36Lt.k33-4.dot 36Lt.k33-3.dist
+Total paths attempted: 12463
+Unique path: 5092
+No possible paths: 6679
+No valid paths: 479
+Repetitive: 0
+Multiple valid paths: 144
+Too many solutions: 1
+Too complex: 68
+
+The minimum number of pairs in a distance estimate is 10.
+The minimum number of pairs used in a path is 10.
+abyss-index  --fai 36Lt.k33-3.fa
+Reading `36Lt.k33-3.fa'...
+Writing `36Lt.k33-3.fa.fai'...
+abyss-index  --fai 36Lt.k33-4.fa
+Reading `36Lt.k33-4.fa'...
+Writing `36Lt.k33-4.fa.fai'...
+cat 36Lt.k33-3.fa.fai 36Lt.k33-4.fa.fai \
+	|MergePaths   -j18 -k33  -o 36Lt.k33-4.path2 - 36Lt.k33-4.path1
+PathOverlap --assemble   -k33  36Lt.k33-4.dot 36Lt.k33-4.path2 >36Lt.k33-4.path3
+cat 36Lt.k33-3.fa 36Lt.k33-4.fa \
+	|PathConsensus  --dot -k33  -p0.9  -o 36Lt.k33-5.path -s 36Lt.k33-5.fa -g 36Lt.k33-5.dot - 36Lt.k33-4.dot 36Lt.k33-4.path3
+Ambiguous paths: 79
+Merged:          22
+No paths:        0
+Too many paths:  24
+Too complex:     1
+Dissimilar:      32
+cat 36Lt.k33-3.fa 36Lt.k33-4.fa 36Lt.k33-5.fa |MergeContigs   -k33 -o 36Lt.k33-6.fa - 36Lt.k33-5.dot 36Lt.k33-5.path
+The minimum coverage of single-end contigs is 11.6667.
+The minimum coverage of merged contigs is 14.6667.
+Consider increasing the coverage threshold parameter, c, to 14.6667.
+ln -sf 36Lt.k33-6.fa 36Lt.k33-contigs.fa
+PathOverlap --overlap   -k33 --dot 36Lt.k33-5.dot 36Lt.k33-5.path >36Lt.k33-6.dot
+ln -sf 36Lt.k33-6.dot 36Lt.k33-contigs.dot
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k33-6.fa \
+	|abyss-fixmate   -l40  -h 76lib-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst --dot --mean   -j18 -k33 -l40 -s1000 -n10   -o 76lib-6.dist.dot 76lib-6.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    8708107  6.9%
+Singleton   19927858  15.8%
+FR          69375274  54.9%
+RF              7435  0.00589%
+FF             44980  0.0356%
+Different   28222383  22.3%
+Total      126286037
+abyss-scaffold    -k33 -s1000-10000 -n10 -g 36Lt.k33-6.path.dot  36Lt.k33-6.dot 76lib-6.dist.dot >36Lt.k33-6.path
+warning: Removed 21916 invalid edges.
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+285659	3633	407	1002	5709	18315	48163	37482	476481	31.06e6	s=1000
+286105	4079	419	1002	5094	17267	47844	36806	476481	31.1e6	s=2000
+286583	4557	452	1002	4125	15118	46720	32802	324383	31.27e6	s=5000
+286736	4710	510	1002	4135	12718	44509	30652	324344	31.36e6	s=10000
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+285659	3633	407	1002	5709	18315	48163	37482	476481	31.06e6	s=1000
+Best scaffold N50 is 18315 at s=1000.
+PathConsensus  --dot -k33  -p0.9  -s 36Lt.k33-7.fa -g 36Lt.k33-7.dot -o 36Lt.k33-7.path 36Lt.k33-6.fa 36Lt.k33-6.dot 36Lt.k33-6.path
+Ambiguous paths: 1070
+Merged:          250
+No paths:        725
+Too many paths:  18
+Too complex:     6
+Dissimilar:      71
+cat 36Lt.k33-6.fa 36Lt.k33-7.fa \
+	|MergeContigs   -k33 -o 36Lt.k33-8.fa - 36Lt.k33-7.dot 36Lt.k33-7.path
+The minimum coverage of single-end contigs is 11.6667.
+The minimum coverage of merged contigs is 13.3913.
+Consider increasing the coverage threshold parameter, c, to 13.3913.
+ln -sf 36Lt.k33-8.fa 36Lt.k33-scaffolds.fa
+PathOverlap --overlap   -k33 --dot 36Lt.k33-7.dot 36Lt.k33-7.path >36Lt.k33-8.dot
+ln -sf 36Lt.k33-8.dot 36Lt.k33-scaffolds.dot
+abyss-fac   36Lt.k33-unitigs.fa 36Lt.k33-contigs.fa 36Lt.k33-scaffolds.fa |tee 36Lt.k33-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+295724	11618	1005	500	1741	7203	23043	14642	108567	33.69e6	36Lt.k33-unitigs.fa
+286839	8831	720	500	2883	10751	33502	21728	268382	34.37e6	36Lt.k33-contigs.fa
+285230	7651	484	500	4079	16187	45783	35250	487787	34.37e6	36Lt.k33-scaffolds.fa
+ln -sf 36Lt.k33-stats.tab 36Lt.k33-stats
+tr '\t' , <36Lt.k33-stats.tab >36Lt.k33-stats.csv
+abyss-tabtomd 36Lt.k33-stats.tab >36Lt.k33-stats.md
+pandoc 36Lt.k33-stats.md >36Lt.k33-stats.html
+mkdir: cannot create directory '43': File exists
+ABYSS -k43 -q3    --coverage-hist=coverage.hist -s 36Lt.k43-bubbles.fa  -o 36Lt.k43-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 
+ABySS 2.0.1
+ABYSS -k43 -q3 --coverage-hist=coverage.hist -s 36Lt.k43-bubbles.fa -o 36Lt.k43-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq
+Reading `../../../data/36Lt.76.R1_val_1.fq'...
+`../../../data/36Lt.76.R1_val_1.fq': discarded 2826050 reads shorter than 43 bases
+`../../../data/36Lt.76.R1_val_1.fq': discarded 2 reads containing non-ACGT characters
+Reading `../../../data/36Lt.76.R2_val_2.fq'...
+`../../../data/36Lt.76.R2_val_2.fq': discarded 3087539 reads shorter than 43 bases
+`../../../data/36Lt.76.R2_val_2.fq': discarded 20935 reads containing non-ACGT characters
+Loaded 986080335 k-mer
+Minimum k-mer coverage is 24
+Using a coverage threshold of 10...
+The median k-mer coverage is 105
+The reconstruction is 50205069
+The k-mer coverage threshold is 10.247
+Setting parameter e (erode) to 10
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 10.247
+Generating adjacency
+Added 1952949285 edges.
+Eroding tips
+Eroded 910706748 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 577 k-mer in 577 tips.
+Pruning tips shorter than 2 bp...
+Pruned 608 k-mer in 305 tips.
+Pruning tips shorter than 4 bp...
+Pruned 1189 k-mer in 344 tips.
+Pruning tips shorter than 8 bp...
+Pruned 2269 k-mer in 366 tips.
+Pruning tips shorter than 16 bp...
+Pruned 3528 k-mer in 304 tips.
+Pruning tips shorter than 32 bp...
+Pruned 3550 k-mer in 166 tips.
+Pruning tips shorter than 43 bp...
+Pruned 1354 k-mer in 40 tips.
+Pruning tips shorter than 43 bp...
+Pruned 2102 tips in 7 rounds.
+Marked 4671619 edges of 2164837 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 10.247)
+Found 75360355 k-mer in 2565716 contigs before removing low-coverage contigs.
+Removed 25576866 k-mer in 1139749 low-coverage contigs.
+Split 2278317 ambigiuous branches.
+Eroding tips
+Eroded 175616 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 3274 k-mer in 3274 tips.
+Pruning tips shorter than 2 bp...
+Pruned 4423 k-mer in 2743 tips.
+Pruning tips shorter than 4 bp...
+Pruned 11226 k-mer in 3981 tips.
+Pruning tips shorter than 8 bp...
+Pruned 28495 k-mer in 5392 tips.
+Pruning tips shorter than 16 bp...
+Pruned 67951 k-mer in 6473 tips.
+Pruning tips shorter than 32 bp...
+Pruned 117556 k-mer in 5617 tips.
+Pruning tips shorter than 43 bp...
+Pruned 39465 k-mer in 1119 tips.
+Pruning tips shorter than 43 bp...
+Pruned 38 k-mer in 1 tips.
+Pruning tips shorter than 43 bp...
+Pruned 28600 tips in 8 rounds.
+Popping bubbles
+Removed 13433 bubbles.
+Removed 13433 bubbles
+Marked 497328 edges of 241043 ambiguous vertices.
+Left 262 unassembled k-mer in circular contigs.
+Assembled 48613537 k-mer in 315152 contigs.
+Removed 936744733 k-mer.
+The signal-to-noise ratio (SNR) is -12.7846 dB.
+AdjList    -k43 -m50 --dot 36Lt.k43-1.fa >36Lt.k43-1.dot
+abyss-filtergraph  --dot   -k43 -g 36Lt.k43-2.dot1 36Lt.k43-1.dot 36Lt.k43-1.fa >36Lt.k43-1.path
+MergeContigs   -k43 -g 36Lt.k43-2.dot -o 36Lt.k43-2.fa 36Lt.k43-1.fa 36Lt.k43-2.dot1 36Lt.k43-1.path
+PopBubbles  --dot -j18 -k43  -p0.9  -g 36Lt.k43-3.dot 36Lt.k43-2.fa 36Lt.k43-2.dot >36Lt.k43-2.path
+MergeContigs   -k43 -o 36Lt.k43-3.fa 36Lt.k43-2.fa 36Lt.k43-2.dot 36Lt.k43-2.path
+The minimum coverage of single-end contigs is 10.
+The minimum coverage of merged contigs is 10.5882.
+Consider increasing the coverage threshold parameter, c, to 10.5882.
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	36Lt.k43-2.path 36Lt.k43-1.fa >36Lt.k43-indel.fa
+ln -sf 36Lt.k43-3.fa 36Lt.k43-unitigs.fa
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k43-3.fa \
+	|abyss-fixmate   -l40  -h 76lib-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j18 -k43 -l40 -s1000 -n10   -o 76lib-3.dist 76lib-3.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    4616904  3.66%
+Singleton   14522305  11.5%
+FR          75563662  59.8%
+RF              3358  0.00266%
+FF             49713  0.0394%
+Different   31530095  25%
+Total      126286037
+abyss-todot  --dist -e 36Lt.k43-3.fa 76lib-3.dist >36Lt.k43-3.dist
+Overlap  --dot   -k43 -g 36Lt.k43-4.dot -o 36Lt.k43-4.fa 36Lt.k43-3.fa 36Lt.k43-3.dot 36Lt.k43-3.dist
+Overlap: 11
+Scaffold: 81
+No overlap: 22
+Insignificant (<5bp): 17
+Homopolymer: 9
+Motif: 0
+Ambiguous: 3
+SimpleGraph    -j18 -k43 -o 36Lt.k43-4.path1 36Lt.k43-4.dot 36Lt.k43-3.dist
+Total paths attempted: 13197
+Unique path: 5537
+No possible paths: 7187
+No valid paths: 350
+Repetitive: 0
+Multiple valid paths: 88
+Too many solutions: 2
+Too complex: 33
+
+The minimum number of pairs in a distance estimate is 10.
+The minimum number of pairs used in a path is 10.
+abyss-index  --fai 36Lt.k43-3.fa
+Reading `36Lt.k43-3.fa'...
+Writing `36Lt.k43-3.fa.fai'...
+abyss-index  --fai 36Lt.k43-4.fa
+Reading `36Lt.k43-4.fa'...
+Writing `36Lt.k43-4.fa.fai'...
+cat 36Lt.k43-3.fa.fai 36Lt.k43-4.fa.fai \
+	|MergePaths   -j18 -k43  -o 36Lt.k43-4.path2 - 36Lt.k43-4.path1
+PathOverlap --assemble   -k43  36Lt.k43-4.dot 36Lt.k43-4.path2 >36Lt.k43-4.path3
+cat 36Lt.k43-3.fa 36Lt.k43-4.fa \
+	|PathConsensus  --dot -k43  -p0.9  -o 36Lt.k43-5.path -s 36Lt.k43-5.fa -g 36Lt.k43-5.dot - 36Lt.k43-4.dot 36Lt.k43-4.path3
+Ambiguous paths: 46
+Merged:          6
+No paths:        0
+Too many paths:  14
+Too complex:     0
+Dissimilar:      26
+cat 36Lt.k43-3.fa 36Lt.k43-4.fa 36Lt.k43-5.fa |MergeContigs   -k43 -o 36Lt.k43-6.fa - 36Lt.k43-5.dot 36Lt.k43-5.path
+The minimum coverage of single-end contigs is 10.
+The minimum coverage of merged contigs is 12.7841.
+Consider increasing the coverage threshold parameter, c, to 12.7841.
+ln -sf 36Lt.k43-6.fa 36Lt.k43-contigs.fa
+PathOverlap --overlap   -k43 --dot 36Lt.k43-5.dot 36Lt.k43-5.path >36Lt.k43-6.dot
+ln -sf 36Lt.k43-6.dot 36Lt.k43-contigs.dot
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k43-6.fa \
+	|abyss-fixmate   -l40  -h 76lib-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst --dot --mean   -j18 -k43 -l40 -s1000 -n10   -o 76lib-6.dist.dot 76lib-6.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    4616106  3.66%
+Singleton   14521816  11.5%
+FR          76455963  60.5%
+RF             14061  0.0111%
+FF             55228  0.0437%
+Different   30622863  24.2%
+Total      126286037
+abyss-scaffold    -k43 -s1000-10000 -n10 -g 36Lt.k43-6.path.dot  36Lt.k43-6.dot 76lib-6.dist.dot >36Lt.k43-6.path
+warning: Removed 26850 invalid edges.
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+173925	3682	407	1001	6622	20973	56083	37393	325135	35.04e6	s=1000
+174429	4186	411	1000	5897	20492	56394	37452	325135	35.08e6	s=2000
+174920	4677	441	1000	4540	18690	52406	35506	325135	35.34e6	s=5000
+175082	4839	478	1000	4555	15716	51144	34387	325094	35.44e6	s=10000
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+173925	3682	407	1001	6622	20973	56083	37393	325135	35.04e6	s=1000
+Best scaffold N50 is 20973 at s=1000.
+PathConsensus  --dot -k43  -p0.9  -s 36Lt.k43-7.fa -g 36Lt.k43-7.dot -o 36Lt.k43-7.path 36Lt.k43-6.fa 36Lt.k43-6.dot 36Lt.k43-6.path
+Ambiguous paths: 1165
+Merged:          299
+No paths:        776
+Too many paths:  12
+Too complex:     5
+Dissimilar:      73
+cat 36Lt.k43-6.fa 36Lt.k43-7.fa \
+	|MergeContigs   -k43 -o 36Lt.k43-8.fa - 36Lt.k43-7.dot 36Lt.k43-7.path
+The minimum coverage of single-end contigs is 10.
+The minimum coverage of merged contigs is 13.1628.
+Consider increasing the coverage threshold parameter, c, to 13.1628.
+ln -sf 36Lt.k43-8.fa 36Lt.k43-scaffolds.fa
+PathOverlap --overlap   -k43 --dot 36Lt.k43-7.dot 36Lt.k43-7.path >36Lt.k43-8.dot
+ln -sf 36Lt.k43-8.dot 36Lt.k43-scaffolds.dot
+abyss-fac   36Lt.k43-unitigs.fa 36Lt.k43-contigs.fa 36Lt.k43-scaffolds.fa |tee 36Lt.k43-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+183376	11700	972	500	2005	8394	26442	16754	142019	37.67e6	36Lt.k43-unitigs.fa
+175209	8629	669	500	3482	12932	39090	26433	268417	38.42e6	36Lt.k43-contigs.fa
+173450	7345	464	500	4967	19709	55649	36105	332699	38.42e6	36Lt.k43-scaffolds.fa
+ln -sf 36Lt.k43-stats.tab 36Lt.k43-stats
+tr '\t' , <36Lt.k43-stats.tab >36Lt.k43-stats.csv
+abyss-tabtomd 36Lt.k43-stats.tab >36Lt.k43-stats.md
+pandoc 36Lt.k43-stats.md >36Lt.k43-stats.html
+mkdir: cannot create directory '53': File exists
+ABYSS -k53 -q3    --coverage-hist=coverage.hist -s 36Lt.k53-bubbles.fa  -o 36Lt.k53-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 
+ABySS 2.0.1
+ABYSS -k53 -q3 --coverage-hist=coverage.hist -s 36Lt.k53-bubbles.fa -o 36Lt.k53-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq
+Reading `../../../data/36Lt.76.R1_val_1.fq'...
+`../../../data/36Lt.76.R1_val_1.fq': discarded 6706122 reads shorter than 53 bases
+`../../../data/36Lt.76.R1_val_1.fq': discarded 4 reads containing non-ACGT characters
+Reading `../../../data/36Lt.76.R2_val_2.fq'...
+`../../../data/36Lt.76.R2_val_2.fq': discarded 6954503 reads shorter than 53 bases
+`../../../data/36Lt.76.R2_val_2.fq': discarded 33668 reads containing non-ACGT characters
+Loaded 792293939 k-mer
+Minimum k-mer coverage is 15
+Using a coverage threshold of 8...
+The median k-mer coverage is 69
+The reconstruction is 50838431
+The k-mer coverage threshold is 8.30662
+Setting parameter e (erode) to 8
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 8.30662
+Generating adjacency
+Added 1541933139 edges.
+Eroding tips
+Eroded 737298937 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 1515 k-mer in 1515 tips.
+Pruning tips shorter than 2 bp...
+Pruned 1696 k-mer in 868 tips.
+Pruning tips shorter than 4 bp...
+Pruned 3711 k-mer in 1096 tips.
+Pruning tips shorter than 8 bp...
+Pruned 8039 k-mer in 1305 tips.
+Pruning tips shorter than 16 bp...
+Pruned 19639 k-mer in 1672 tips.
+Pruning tips shorter than 32 bp...
+Pruned 38211 k-mer in 1690 tips.
+Pruning tips shorter than 53 bp...
+Pruned 12154 k-mer in 328 tips.
+Pruning tips shorter than 53 bp...
+Pruned 2 k-mer in 1 tips.
+Pruning tips shorter than 53 bp...
+Pruned 8475 tips in 8 rounds.
+Marked 1106764 edges of 527354 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 8.30662)
+Found 54909999 k-mer in 629342 contigs before removing low-coverage contigs.
+Removed 4628396 k-mer in 180801 low-coverage contigs.
+Split 357923 ambigiuous branches.
+Eroding tips
+Eroded 74925 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 1327 k-mer in 1327 tips.
+Pruning tips shorter than 2 bp...
+Pruned 1781 k-mer in 1033 tips.
+Pruning tips shorter than 4 bp...
+Pruned 4300 k-mer in 1478 tips.
+Pruning tips shorter than 8 bp...
+Pruned 10306 k-mer in 1928 tips.
+Pruning tips shorter than 16 bp...
+Pruned 25779 k-mer in 2442 tips.
+Pruning tips shorter than 32 bp...
+Pruned 39381 k-mer in 1883 tips.
+Pruning tips shorter than 53 bp...
+Pruned 23922 k-mer in 620 tips.
+Pruning tips shorter than 53 bp...
+Pruned 29 k-mer in 2 tips.
+Pruning tips shorter than 53 bp...
+Pruned 10713 tips in 8 rounds.
+Popping bubbles
+Removed 10198 bubbles.
+Removed 10198 bubbles
+Marked 339671 edges of 166353 ambiguous vertices.
+Left 136 unassembled k-mer in circular contigs.
+Assembled 49429280 k-mer in 225647 contigs.
+Removed 742194050 k-mer.
+The signal-to-noise ratio (SNR) is -11.7068 dB.
+AdjList    -k53 -m50 --dot 36Lt.k53-1.fa >36Lt.k53-1.dot
+abyss-filtergraph  --dot   -k53 -g 36Lt.k53-2.dot1 36Lt.k53-1.dot 36Lt.k53-1.fa >36Lt.k53-1.path
+MergeContigs   -k53 -g 36Lt.k53-2.dot -o 36Lt.k53-2.fa 36Lt.k53-1.fa 36Lt.k53-2.dot1 36Lt.k53-1.path
+PopBubbles  --dot -j18 -k53  -p0.9  -g 36Lt.k53-3.dot 36Lt.k53-2.fa 36Lt.k53-2.dot >36Lt.k53-2.path
+MergeContigs   -k53 -o 36Lt.k53-3.fa 36Lt.k53-2.fa 36Lt.k53-2.dot 36Lt.k53-2.path
+The minimum coverage of single-end contigs is 8.32076.
+The minimum coverage of merged contigs is 8.34091.
+Consider increasing the coverage threshold parameter, c, to 8.34091.
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	36Lt.k53-2.path 36Lt.k53-1.fa >36Lt.k53-indel.fa
+ln -sf 36Lt.k53-3.fa 36Lt.k53-unitigs.fa
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k53-3.fa \
+	|abyss-fixmate   -l40  -h 76lib-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j18 -k53 -l40 -s1000 -n10   -o 76lib-3.dist 76lib-3.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    4438289  3.51%
+Singleton   14220999  11.3%
+FR          79750579  63.2%
+RF              4191  0.00332%
+FF             53993  0.0428%
+Different   27817986  22%
+Total      126286037
+abyss-todot  --dist -e 36Lt.k53-3.fa 76lib-3.dist >36Lt.k53-3.dist
+Overlap  --dot   -k53 -g 36Lt.k53-4.dot -o 36Lt.k53-4.fa 36Lt.k53-3.fa 36Lt.k53-3.dot 36Lt.k53-3.dist
+Overlap: 22
+Scaffold: 141
+No overlap: 45
+Insignificant (<5bp): 34
+Homopolymer: 7
+Motif: 2
+Ambiguous: 4
+SimpleGraph    -j18 -k53 -o 36Lt.k53-4.path1 36Lt.k53-4.dot 36Lt.k53-3.dist
+Total paths attempted: 13246
+Unique path: 5321
+No possible paths: 7627
+No valid paths: 225
+Repetitive: 0
+Multiple valid paths: 57
+Too many solutions: 2
+Too complex: 14
+
+The minimum number of pairs in a distance estimate is 10.
+The minimum number of pairs used in a path is 10.
+abyss-index  --fai 36Lt.k53-3.fa
+Reading `36Lt.k53-3.fa'...
+Writing `36Lt.k53-3.fa.fai'...
+abyss-index  --fai 36Lt.k53-4.fa
+Reading `36Lt.k53-4.fa'...
+Writing `36Lt.k53-4.fa.fai'...
+cat 36Lt.k53-3.fa.fai 36Lt.k53-4.fa.fai \
+	|MergePaths   -j18 -k53  -o 36Lt.k53-4.path2 - 36Lt.k53-4.path1
+PathOverlap --assemble   -k53  36Lt.k53-4.dot 36Lt.k53-4.path2 >36Lt.k53-4.path3
+cat 36Lt.k53-3.fa 36Lt.k53-4.fa \
+	|PathConsensus  --dot -k53  -p0.9  -o 36Lt.k53-5.path -s 36Lt.k53-5.fa -g 36Lt.k53-5.dot - 36Lt.k53-4.dot 36Lt.k53-4.path3
+Ambiguous paths: 31
+Merged:          3
+No paths:        0
+Too many paths:  9
+Too complex:     1
+Dissimilar:      18
+cat 36Lt.k53-3.fa 36Lt.k53-4.fa 36Lt.k53-5.fa |MergeContigs   -k53 -o 36Lt.k53-6.fa - 36Lt.k53-5.dot 36Lt.k53-5.path
+The minimum coverage of single-end contigs is 8.32076.
+The minimum coverage of merged contigs is 12.8889.
+Consider increasing the coverage threshold parameter, c, to 12.8889.
+ln -sf 36Lt.k53-6.fa 36Lt.k53-contigs.fa
+PathOverlap --overlap   -k53 --dot 36Lt.k53-5.dot 36Lt.k53-5.path >36Lt.k53-6.dot
+ln -sf 36Lt.k53-6.dot 36Lt.k53-contigs.dot
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k53-6.fa \
+	|abyss-fixmate   -l40  -h 76lib-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst --dot --mean   -j18 -k53 -l40 -s1000 -n10   -o 76lib-6.dist.dot 76lib-6.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    4438035  3.51%
+Singleton   14220864  11.3%
+FR          80305180  63.6%
+RF             16061  0.0127%
+FF             57174  0.0453%
+Different   27248723  21.6%
+Total      126286037
+abyss-scaffold    -k53 -s1000-10000 -n10 -g 36Lt.k53-6.path.dot  36Lt.k53-6.dot 76lib-6.dist.dot >36Lt.k53-6.path
+warning: Removed 25480 invalid edges.
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+122190	3759	398	1000	7118	23096	61334	44328	554711	37.83e6	s=1000
+122657	4226	404	1000	6510	22152	60537	44038	554711	37.83e6	s=2000
+123164	4733	433	1000	4858	20969	58348	42181	554711	38.09e6	s=5000
+123350	4919	469	1000	4902	18208	55770	40556	554671	38.37e6	s=10000
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+122190	3759	398	1000	7118	23096	61334	44328	554711	37.83e6	s=1000
+Best scaffold N50 is 23096 at s=1000.
+PathConsensus  --dot -k53  -p0.9  -s 36Lt.k53-7.fa -g 36Lt.k53-7.dot -o 36Lt.k53-7.path 36Lt.k53-6.fa 36Lt.k53-6.dot 36Lt.k53-6.path
+Ambiguous paths: 1202
+Merged:          331
+No paths:        787
+Too many paths:  10
+Too complex:     7
+Dissimilar:      67
+cat 36Lt.k53-6.fa 36Lt.k53-7.fa \
+	|MergeContigs   -k53 -o 36Lt.k53-8.fa - 36Lt.k53-7.dot 36Lt.k53-7.path
+The minimum coverage of single-end contigs is 8.32076.
+The minimum coverage of merged contigs is 12.6044.
+Consider increasing the coverage threshold parameter, c, to 12.6044.
+ln -sf 36Lt.k53-8.fa 36Lt.k53-scaffolds.fa
+PathOverlap --overlap   -k53 --dot 36Lt.k53-7.dot 36Lt.k53-7.path >36Lt.k53-8.dot
+ln -sf 36Lt.k53-8.dot 36Lt.k53-scaffolds.dot
+abyss-fac   36Lt.k53-unitigs.fa 36Lt.k53-contigs.fa 36Lt.k53-scaffolds.fa |tee 36Lt.k53-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+130333	11389	904	500	2291	9800	30853	19681	152987	40.32e6	36Lt.k53-unitigs.fa
+123487	8455	646	500	3839	14677	41577	30252	407484	41.13e6	36Lt.k53-contigs.fa
+121684	7158	449	500	5510	21780	59487	42578	563010	41.13e6	36Lt.k53-scaffolds.fa
+ln -sf 36Lt.k53-stats.tab 36Lt.k53-stats
+tr '\t' , <36Lt.k53-stats.tab >36Lt.k53-stats.csv
+abyss-tabtomd 36Lt.k53-stats.tab >36Lt.k53-stats.md
+pandoc 36Lt.k53-stats.md >36Lt.k53-stats.html
+mkdir: cannot create directory '63': File exists
+ABYSS -k63 -q3    --coverage-hist=coverage.hist -s 36Lt.k63-bubbles.fa  -o 36Lt.k63-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 
+ABySS 2.0.1
+ABYSS -k63 -q3 --coverage-hist=coverage.hist -s 36Lt.k63-bubbles.fa -o 36Lt.k63-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq
+Reading `../../../data/36Lt.76.R1_val_1.fq'...
+`../../../data/36Lt.76.R1_val_1.fq': discarded 10733963 reads shorter than 63 bases
+`../../../data/36Lt.76.R1_val_1.fq': discarded 57 reads containing non-ACGT characters
+Reading `../../../data/36Lt.76.R2_val_2.fq'...
+`../../../data/36Lt.76.R2_val_2.fq': discarded 11081690 reads shorter than 63 bases
+`../../../data/36Lt.76.R2_val_2.fq': discarded 36100 reads containing non-ACGT characters
+Loaded 511537441 k-mer
+Minimum k-mer coverage is 8
+Using a coverage threshold of 6...
+The median k-mer coverage is 36
+The reconstruction is 50992598
+The k-mer coverage threshold is 6
+Setting parameter e (erode) to 6
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 6
+Generating adjacency
+Added 961650240 edges.
+Eroding tips
+Eroded 460226767 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 2908 k-mer in 2908 tips.
+Pruning tips shorter than 2 bp...
+Pruned 4701 k-mer in 2889 tips.
+Pruning tips shorter than 4 bp...
+Pruned 9996 k-mer in 3715 tips.
+Pruning tips shorter than 8 bp...
+Pruned 23413 k-mer in 4776 tips.
+Pruning tips shorter than 16 bp...
+Pruned 57035 k-mer in 5753 tips.
+Pruning tips shorter than 32 bp...
+Pruned 100905 k-mer in 4504 tips.
+Pruning tips shorter than 63 bp...
+Pruned 74221 k-mer in 1873 tips.
+Pruning tips shorter than 63 bp...
+Pruned 139 k-mer in 12 tips.
+Pruning tips shorter than 63 bp...
+Pruned 26430 tips in 8 rounds.
+Marked 362066 edges of 177293 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 6)
+Found 51037339 k-mer in 241758 contigs before removing low-coverage contigs.
+Removed 441224 k-mer in 19500 low-coverage contigs.
+Split 37198 ambigiuous branches.
+Eroding tips
+Eroded 11152 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 464 k-mer in 464 tips.
+Pruning tips shorter than 2 bp...
+Pruned 629 k-mer in 379 tips.
+Pruning tips shorter than 4 bp...
+Pruned 1191 k-mer in 443 tips.
+Pruning tips shorter than 8 bp...
+Pruned 2774 k-mer in 551 tips.
+Pruning tips shorter than 16 bp...
+Pruned 5494 k-mer in 545 tips.
+Pruning tips shorter than 32 bp...
+Pruned 7602 k-mer in 353 tips.
+Pruning tips shorter than 63 bp...
+Pruned 8731 k-mer in 208 tips.
+Pruning tips shorter than 63 bp...
+Pruned 25 k-mer in 2 tips.
+Pruning tips shorter than 63 bp...
+Pruned 2945 tips in 8 rounds.
+Popping bubbles
+Removed 8064 bubbles.
+Removed 8064 bubbles
+Marked 245955 edges of 121158 ambiguous vertices.
+Left 262 unassembled k-mer in circular contigs.
+Assembled 49928407 k-mer in 167880 contigs.
+Removed 460979371 k-mer.
+The signal-to-noise ratio (SNR) is -9.59891 dB.
+AdjList    -k63 -m50 --dot 36Lt.k63-1.fa >36Lt.k63-1.dot
+abyss-filtergraph  --dot   -k63 -g 36Lt.k63-2.dot1 36Lt.k63-1.dot 36Lt.k63-1.fa >36Lt.k63-1.path
+MergeContigs   -k63 -g 36Lt.k63-2.dot -o 36Lt.k63-2.fa 36Lt.k63-1.fa 36Lt.k63-2.dot1 36Lt.k63-1.path
+PopBubbles  --dot -j18 -k63  -p0.9  -g 36Lt.k63-3.dot 36Lt.k63-2.fa 36Lt.k63-2.dot >36Lt.k63-2.path
+MergeContigs   -k63 -o 36Lt.k63-3.fa 36Lt.k63-2.fa 36Lt.k63-2.dot 36Lt.k63-2.path
+The minimum coverage of single-end contigs is 6.
+The minimum coverage of merged contigs is 6.22222.
+Consider increasing the coverage threshold parameter, c, to 6.22222.
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	36Lt.k63-2.path 36Lt.k63-1.fa >36Lt.k63-indel.fa
+ln -sf 36Lt.k63-3.fa 36Lt.k63-unitigs.fa
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k63-3.fa \
+	|abyss-fixmate   -l40  -h 76lib-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j18 -k63 -l40 -s1000 -n10   -o 76lib-3.dist 76lib-3.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    4303149  3.41%
+Singleton   14033557  11.1%
+FR          82952762  65.7%
+RF              5948  0.00471%
+FF             57779  0.0458%
+Different   24932842  19.7%
+Total      126286037
+abyss-todot  --dist -e 36Lt.k63-3.fa 76lib-3.dist >36Lt.k63-3.dist
+Overlap  --dot   -k63 -g 36Lt.k63-4.dot -o 36Lt.k63-4.fa 36Lt.k63-3.fa 36Lt.k63-3.dot 36Lt.k63-3.dist
+Overlap: 256
+Scaffold: 406
+No overlap: 99
+Insignificant (<5bp): 102
+Homopolymer: 8
+Motif: 5
+Ambiguous: 31
+SimpleGraph    -j18 -k63 -o 36Lt.k63-4.path1 36Lt.k63-4.dot 36Lt.k63-3.dist
+Total paths attempted: 13765
+Unique path: 5620
+No possible paths: 7958
+No valid paths: 115
+Repetitive: 0
+Multiple valid paths: 60
+Too many solutions: 3
+Too complex: 9
+
+The minimum number of pairs in a distance estimate is 10.
+The minimum number of pairs used in a path is 10.
+abyss-index  --fai 36Lt.k63-3.fa
+Reading `36Lt.k63-3.fa'...
+Writing `36Lt.k63-3.fa.fai'...
+abyss-index  --fai 36Lt.k63-4.fa
+Reading `36Lt.k63-4.fa'...
+Writing `36Lt.k63-4.fa.fai'...
+cat 36Lt.k63-3.fa.fai 36Lt.k63-4.fa.fai \
+	|MergePaths   -j18 -k63  -o 36Lt.k63-4.path2 - 36Lt.k63-4.path1
+PathOverlap --assemble   -k63  36Lt.k63-4.dot 36Lt.k63-4.path2 >36Lt.k63-4.path3
+cat 36Lt.k63-3.fa 36Lt.k63-4.fa \
+	|PathConsensus  --dot -k63  -p0.9  -o 36Lt.k63-5.path -s 36Lt.k63-5.fa -g 36Lt.k63-5.dot - 36Lt.k63-4.dot 36Lt.k63-4.path3
+Ambiguous paths: 37
+Merged:          6
+No paths:        0
+Too many paths:  12
+Too complex:     0
+Dissimilar:      19
+cat 36Lt.k63-3.fa 36Lt.k63-4.fa 36Lt.k63-5.fa |MergeContigs   -k63 -o 36Lt.k63-6.fa - 36Lt.k63-5.dot 36Lt.k63-5.path
+The minimum coverage of single-end contigs is 6.
+The minimum coverage of merged contigs is 6.
+ln -sf 36Lt.k63-6.fa 36Lt.k63-contigs.fa
+PathOverlap --overlap   -k63 --dot 36Lt.k63-5.dot 36Lt.k63-5.path >36Lt.k63-6.dot
+ln -sf 36Lt.k63-6.dot 36Lt.k63-contigs.dot
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k63-6.fa \
+	|abyss-fixmate   -l40  -h 76lib-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst --dot --mean   -j18 -k63 -l40 -s1000 -n10   -o 76lib-6.dist.dot 76lib-6.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned    4302961  3.41%
+Singleton   14033431  11.1%
+FR          83266788  65.9%
+RF             17846  0.0141%
+FF             67779  0.0537%
+Different   24597232  19.5%
+Total      126286037
+abyss-scaffold    -k63 -s1000-10000 -n10 -g 36Lt.k63-6.path.dot  36Lt.k63-6.dot 76lib-6.dist.dot >36Lt.k63-6.path
+warning: Removed 21576 invalid edges.
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+91665	3803	406	1000	7449	24571	60842	44416	506878	39.95e6	s=1000
+92149	4287	412	1000	6843	24230	61204	43939	506878	40.01e6	s=2000
+92710	4848	435	1000	5011	21857	59272	42331	504233	40.29e6	s=5000
+92904	5042	471	1000	5038	19161	56491	41078	504233	40.58e6	s=10000
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+91665	3803	406	1000	7449	24571	60842	44416	506878	39.95e6	s=1000
+Best scaffold N50 is 24571 at s=1000.
+PathConsensus  --dot -k63  -p0.9  -s 36Lt.k63-7.fa -g 36Lt.k63-7.dot -o 36Lt.k63-7.path 36Lt.k63-6.fa 36Lt.k63-6.dot 36Lt.k63-6.path
+Ambiguous paths: 1277
+Merged:          431
+No paths:        761
+Too many paths:  14
+Too complex:     0
+Dissimilar:      71
+cat 36Lt.k63-6.fa 36Lt.k63-7.fa \
+	|MergeContigs   -k63 -o 36Lt.k63-8.fa - 36Lt.k63-7.dot 36Lt.k63-7.path
+The minimum coverage of single-end contigs is 6.
+The minimum coverage of merged contigs is 10.3333.
+Consider increasing the coverage threshold parameter, c, to 10.3333.
+ln -sf 36Lt.k63-8.fa 36Lt.k63-scaffolds.fa
+PathOverlap --overlap   -k63 --dot 36Lt.k63-7.dot 36Lt.k63-7.path >36Lt.k63-8.dot
+ln -sf 36Lt.k63-8.dot 36Lt.k63-scaffolds.dot
+abyss-fac   36Lt.k63-unitigs.fa 36Lt.k63-contigs.fa 36Lt.k63-scaffolds.fa |tee 36Lt.k63-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+99306	11616	963	500	2413	9819	29168	19004	227640	42.34e6	36Lt.k63-unitigs.fa
+93048	8523	645	500	4113	15262	43357	30790	407546	43.2e6	36Lt.k63-contigs.fa
+91031	7140	453	500	5948	23253	58835	42789	511430	43.2e6	36Lt.k63-scaffolds.fa
+ln -sf 36Lt.k63-stats.tab 36Lt.k63-stats
+tr '\t' , <36Lt.k63-stats.tab >36Lt.k63-stats.csv
+abyss-tabtomd 36Lt.k63-stats.tab >36Lt.k63-stats.md
+pandoc 36Lt.k63-stats.md >36Lt.k63-stats.html
+mkdir: cannot create directory '73': File exists
+ABYSS -k73 -q3    --coverage-hist=coverage.hist -s 36Lt.k73-bubbles.fa  -o 36Lt.k73-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 
+ABySS 2.0.1
+ABYSS -k73 -q3 --coverage-hist=coverage.hist -s 36Lt.k73-bubbles.fa -o 36Lt.k73-1.fa ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq
+Reading `../../../data/36Lt.76.R1_val_1.fq'...
+`../../../data/36Lt.76.R1_val_1.fq': discarded 18576693 reads shorter than 73 bases
+`../../../data/36Lt.76.R1_val_1.fq': discarded 54 reads containing non-ACGT characters
+Reading `../../../data/36Lt.76.R2_val_2.fq'...
+`../../../data/36Lt.76.R2_val_2.fq': discarded 20918472 reads shorter than 73 bases
+`../../../data/36Lt.76.R2_val_2.fq': discarded 24780 reads containing non-ACGT characters
+Loaded 154003779 k-mer
+Minimum k-mer coverage is 156
+Using a coverage threshold of 3...
+The median k-mer coverage is 8
+The reconstruction is 39880941
+The k-mer coverage threshold is 2.82843
+Setting parameter e (erode) to 3
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 2.82843
+Generating adjacency
+Added 232340974 edges.
+Eroding tips
+Eroded 114367848 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 103615 k-mer in 103615 tips.
+Pruning tips shorter than 2 bp...
+Pruned 266855 k-mer in 260678 tips.
+Pruning tips shorter than 4 bp...
+Pruned 834563 k-mer in 483843 tips.
+Pruning tips shorter than 8 bp...
+Pruned 1590957 k-mer in 469699 tips.
+Pruning tips shorter than 16 bp...
+Pruned 4561384 k-mer in 726795 tips.
+Pruning tips shorter than 32 bp...
+Pruned 9856009 k-mer in 818125 tips.
+Pruning tips shorter than 64 bp...
+Pruned 13575996 k-mer in 594419 tips.
+Pruning tips shorter than 73 bp...
+Pruned 1836541 k-mer in 54962 tips.
+Pruning tips shorter than 73 bp...
+Pruned 5017 k-mer in 260 tips.
+Pruning tips shorter than 73 bp...
+Pruned 265 k-mer in 6 tips.
+Pruning tips shorter than 73 bp...
+Pruned 56 k-mer in 1 tips.
+Pruning tips shorter than 73 bp...
+Pruned 3512403 tips in 11 rounds.
+Marked 24151 edges of 11901 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 2.82843)
+Found 7004047 k-mer in 75843 contigs before removing low-coverage contigs.
+Removed 889 k-mer in 288 low-coverage contigs.
+Split 466 ambigiuous branches.
+Eroding tips
+Eroded 1069 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruned 40 k-mer in 40 tips.
+Pruning tips shorter than 2 bp...
+Pruned 44 k-mer in 26 tips.
+Pruning tips shorter than 4 bp...
+Pruned 73 k-mer in 25 tips.
+Pruning tips shorter than 8 bp...
+Pruned 223 k-mer in 35 tips.
+Pruning tips shorter than 16 bp...
+Pruned 560 k-mer in 52 tips.
+Pruning tips shorter than 32 bp...
+Pruned 1314 k-mer in 63 tips.
+Pruning tips shorter than 64 bp...
+Pruned 2711 k-mer in 78 tips.
+Pruning tips shorter than 73 bp...
+Pruned 2212 k-mer in 59 tips.
+Pruning tips shorter than 73 bp...
+Pruned 38 k-mer in 1 tips.
+Pruning tips shorter than 73 bp...
+Pruned 21 k-mer in 1 tips.
+Pruning tips shorter than 73 bp...
+Pruned 380 tips in 10 rounds.
+Popping bubbles
+Removed 368 bubbles.
+Removed 368 bubbles
+Marked 20749 edges of 10222 ambiguous vertices.
+Left 626 unassembled k-mer in circular contigs.
+Assembled 6964501 k-mer in 73546 contigs.
+Removed 147008300 k-mer.
+The signal-to-noise ratio (SNR) is -13.2252 dB.
+AdjList    -k73 -m50 --dot 36Lt.k73-1.fa >36Lt.k73-1.dot
+abyss-filtergraph  --dot   -k73 -g 36Lt.k73-2.dot1 36Lt.k73-1.dot 36Lt.k73-1.fa >36Lt.k73-1.path
+MergeContigs   -k73 -g 36Lt.k73-2.dot -o 36Lt.k73-2.fa 36Lt.k73-1.fa 36Lt.k73-2.dot1 36Lt.k73-1.path
+PopBubbles  --dot -j18 -k73  -p0.9  -g 36Lt.k73-3.dot 36Lt.k73-2.fa 36Lt.k73-2.dot >36Lt.k73-2.path
+MergeContigs   -k73 -o 36Lt.k73-3.fa 36Lt.k73-2.fa 36Lt.k73-2.dot 36Lt.k73-2.path
+The minimum coverage of single-end contigs is 2.83333.
+The minimum coverage of merged contigs is 4.4023.
+Consider increasing the coverage threshold parameter, c, to 4.4023.
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	36Lt.k73-2.path 36Lt.k73-1.fa >36Lt.k73-indel.fa
+ln -sf 36Lt.k73-3.fa 36Lt.k73-unitigs.fa
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k73-3.fa \
+	|abyss-fixmate   -l40  -h 76lib-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j18 -k73 -l40 -s1000 -n10   -o 76lib-3.dist 76lib-3.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned   66623081  52.8%
+Singleton   27286938  21.6%
+FR          20348252  16.1%
+RF              7414  0.00587%
+FF             16884  0.0134%
+Different   12003468  9.5%
+Total      126286037
+abyss-todot  --dist -e 36Lt.k73-3.fa 76lib-3.dist >36Lt.k73-3.dist
+Overlap  --dot   -k73 -g 36Lt.k73-4.dot -o 36Lt.k73-4.fa 36Lt.k73-3.fa 36Lt.k73-3.dot 36Lt.k73-3.dist
+Overlap: 28
+Scaffold: 20
+No overlap: 104
+Insignificant (<5bp): 39
+Homopolymer: 0
+Motif: 0
+Ambiguous: 123
+SimpleGraph    -j18 -k73 -o 36Lt.k73-4.path1 36Lt.k73-4.dot 36Lt.k73-3.dist
+Total paths attempted: 162
+Unique path: 23
+No possible paths: 139
+No valid paths: 0
+Repetitive: 0
+Multiple valid paths: 0
+Too many solutions: 0
+Too complex: 0
+
+The minimum number of pairs in a distance estimate is 10.
+The minimum number of pairs used in a path is 18.
+Consider increasing the number of pairs threshold paramter, n, to 18.
+abyss-index  --fai 36Lt.k73-3.fa
+Reading `36Lt.k73-3.fa'...
+Writing `36Lt.k73-3.fa.fai'...
+abyss-index  --fai 36Lt.k73-4.fa
+Reading `36Lt.k73-4.fa'...
+Writing `36Lt.k73-4.fa.fai'...
+cat 36Lt.k73-3.fa.fai 36Lt.k73-4.fa.fai \
+	|MergePaths   -j18 -k73  -o 36Lt.k73-4.path2 - 36Lt.k73-4.path1
+PathOverlap --assemble   -k73  36Lt.k73-4.dot 36Lt.k73-4.path2 >36Lt.k73-4.path3
+cat 36Lt.k73-3.fa 36Lt.k73-4.fa \
+	|PathConsensus  --dot -k73  -p0.9  -o 36Lt.k73-5.path -s 36Lt.k73-5.fa -g 36Lt.k73-5.dot - 36Lt.k73-4.dot 36Lt.k73-4.path3
+Ambiguous paths: 0
+Merged:          0
+No paths:        0
+Too many paths:  0
+Too complex:     0
+Dissimilar:      0
+cat 36Lt.k73-3.fa 36Lt.k73-4.fa 36Lt.k73-5.fa |MergeContigs   -k73 -o 36Lt.k73-6.fa - 36Lt.k73-5.dot 36Lt.k73-5.path
+The minimum coverage of single-end contigs is 2.83333.
+The minimum coverage of merged contigs is 17.0768.
+Consider increasing the coverage threshold parameter, c, to 17.0768.
+ln -sf 36Lt.k73-6.fa 36Lt.k73-contigs.fa
+PathOverlap --overlap   -k73 --dot 36Lt.k73-5.dot 36Lt.k73-5.path >36Lt.k73-6.dot
+ln -sf 36Lt.k73-6.dot 36Lt.k73-contigs.dot
+abyss-map   -j18 -l40    ../../../data/36Lt.76.R1_val_1.fq ../../../data/36Lt.76.R2_val_2.fq 36Lt.k73-6.fa \
+	|abyss-fixmate   -l40  -h 76lib-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst --dot --mean   -j18 -k73 -l40 -s1000 -n10   -o 76lib-6.dist.dot 76lib-6.hist
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+Mateless           0
+Unaligned   66623081  52.8%
+Singleton   27286938  21.6%
+FR          20476112  16.2%
+RF              7457  0.0059%
+FF             16942  0.0134%
+Different   11875507  9.4%
+Total      126286037
+abyss-scaffold    -k73 -s1000-10000 -n10 -g 36Lt.k73-6.path.dot  36Lt.k73-6.dot 76lib-6.dist.dot >36Lt.k73-6.path
+warning: Removed 446 invalid edges.
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+64635	49	8	1003	1443	4798	8397	5774	16061	133650	s=1000
+64655	69	18	1003	1247	1899	5605	3879	14562	136902	s=2000
+64660	74	22	1003	1247	1927	3298	2531	7885	137874	s=5000
+64660	74	22	1003	1247	1927	3298	2531	7885	137874	s=10000
+n	n:1000	L50	min	N80	N50	N20	E-size	max	sum	name
+64635	49	8	1003	1443	4798	8397	5774	16061	133650	s=1000
+Best scaffold N50 is 4798 at s=1000.
+PathConsensus  --dot -k73  -p0.9  -s 36Lt.k73-7.fa -g 36Lt.k73-7.dot -o 36Lt.k73-7.path 36Lt.k73-6.fa 36Lt.k73-6.dot 36Lt.k73-6.path
+Ambiguous paths: 21
+Merged:          8
+No paths:        13
+Too many paths:  0
+Too complex:     0
+Dissimilar:      0
+cat 36Lt.k73-6.fa 36Lt.k73-7.fa \
+	|MergeContigs   -k73 -o 36Lt.k73-8.fa - 36Lt.k73-7.dot 36Lt.k73-7.path
+The minimum coverage of single-end contigs is 2.83333.
+The minimum coverage of merged contigs is 47.9286.
+Consider increasing the coverage threshold parameter, c, to 47.9286.
+ln -sf 36Lt.k73-8.fa 36Lt.k73-scaffolds.fa
+PathOverlap --overlap   -k73 --dot 36Lt.k73-7.dot 36Lt.k73-7.path >36Lt.k73-8.dot
+ln -sf 36Lt.k73-8.dot 36Lt.k73-scaffolds.dot
+abyss-fac   36Lt.k73-unitigs.fa 36Lt.k73-contigs.fa 36Lt.k73-scaffolds.fa |tee 36Lt.k73-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+64670	492	160	500	572	763	1371	1170	7885	395571	36Lt.k73-unitigs.fa
+64660	477	144	500	572	775	1729	1310	7885	396177	36Lt.k73-contigs.fa
+64624	452	119	500	572	775	3516	2562	16978	396288	36Lt.k73-scaffolds.fa
+ln -sf 36Lt.k73-stats.tab 36Lt.k73-stats
+tr '\t' , <36Lt.k73-stats.tab >36Lt.k73-stats.csv
+abyss-tabtomd 36Lt.k73-stats.tab >36Lt.k73-stats.md
+pandoc 36Lt.k73-stats.md >36Lt.k73-stats.html

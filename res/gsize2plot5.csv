@@ -1,0 +1,33 @@
+,Assembly,Sequence_type,Strain,Values
+1,76, Non-coding,CA15-F10,21.92
+2,300, Non-coding,CA15-F10,31.59
+3,SR, Non-coding,CA15-F10,35.73
+6,76,Coding,CA15-F10,19.31
+7,300,Coding,CA15-F10,25.70
+8,SR,Coding,CA15-F10,29.54
+11,76, Non-coding,CA15-11,22.16
+12,300, Non-coding,CA15-11,30.29
+13,SR, Non-coding,CA15-11,31.76
+14,LR, Non-coding,CA15-11,61.557486
+15,Hyb, Non-coding,CA15-11,60.805879
+16,76,Coding,CA15-11,22.16
+17,300,Coding,CA15-11,30.29
+18,SR,Coding,CA15-11,31.76
+19,LR,Coding,CA15-11,50.134389
+20,Hyb,Coding,CA15-11,51.096012
+21,76, Non-coding,EF-36,20.92
+22,300, Non-coding,EF-36,25.29
+23,SR, Non-coding,EF-36,25.24
+24,LR, Non-coding,EF-36,30.596127
+25,Hyb, Non-coding,EF-36,30.591007
+26,76,Coding,EF-36,22.90
+27,300,Coding,EF-36,25.03
+28,SR,Coding,EF-36,25.09
+29,LR,Coding,EF-36,28.389816
+30,Hyb,Coding,EF-36,28.471905
+31,76, Non-coding,CA15-75,24.58
+32,300, Non-coding,CA15-75,36.80
+33,SR, Non-coding,CA15-75,42.01
+36,76,Coding,CA15-75,22.14
+37,300,Coding,CA15-75,29.95
+38,SR,Coding,CA15-75,33.34

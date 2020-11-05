@@ -1,0 +1,1349 @@
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/27/2020 16:47:46 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/10Lt.300.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5113 job(s) on augustus
+INFO:	[augustus]	512 of 5113 task(s) completed
+INFO:	[augustus]	1023 of 5113 task(s) completed
+INFO:	[augustus]	1534 of 5113 task(s) completed
+INFO:	[augustus]	2046 of 5113 task(s) completed
+INFO:	[augustus]	2557 of 5113 task(s) completed
+INFO:	[augustus]	3068 of 5113 task(s) completed
+INFO:	[augustus]	3580 of 5113 task(s) completed
+INFO:	[augustus]	4091 of 5113 task(s) completed
+INFO:	[augustus]	4602 of 5113 task(s) completed
+INFO:	[augustus]	5113 of 5113 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4514 job(s) on hmmsearch
+INFO:	[hmmsearch]	452 of 4514 task(s) completed
+INFO:	[hmmsearch]	1355 of 4514 task(s) completed
+INFO:	[hmmsearch]	2257 of 4514 task(s) completed
+INFO:	[hmmsearch]	2709 of 4514 task(s) completed
+INFO:	[hmmsearch]	3160 of 4514 task(s) completed
+INFO:	[hmmsearch]	3612 of 4514 task(s) completed
+INFO:	[hmmsearch]	4514 of 4514 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['16851at5338', '13496at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 2227 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	223 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	446 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	669 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	891 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1114 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1337 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1559 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1782 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2005 of 2227 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2227 of 2227 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 1556
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_10Lt.300.fasta.busco as species:
+INFO:	[augustus]	255 of 2544 task(s) completed
+INFO:	[augustus]	509 of 2544 task(s) completed
+INFO:	[augustus]	764 of 2544 task(s) completed
+INFO:	[augustus]	1018 of 2544 task(s) completed
+INFO:	[augustus]	1273 of 2544 task(s) completed
+INFO:	[augustus]	1527 of 2544 task(s) completed
+INFO:	[augustus]	1781 of 2544 task(s) completed
+INFO:	[augustus]	2036 of 2544 task(s) completed
+INFO:	[augustus]	2290 of 2544 task(s) completed
+INFO:	[augustus]	2544 of 2544 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	1009 of 3361 task(s) completed
+INFO:	[hmmsearch]	1345 of 3361 task(s) completed
+INFO:	[hmmsearch]	2353 of 3361 task(s) completed
+INFO:	[hmmsearch]	3025 of 3361 task(s) completed
+INFO:	[hmmsearch]	3361 of 3361 task(s) completed
+INFO:	Results:	C:65.3%[S:63.0%,D:2.3%],F:12.7%,M:22.0%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:65.3%[S:63.0%,D:2.3%],F:12.7%,M:22.0%,n:3870   |
+	|2527	Complete BUSCOs (C)                       |
+	|2439	Complete and single-copy BUSCOs (S)       |
+	|88	Complete and duplicated BUSCOs (D)        |
+	|493	Fragmented BUSCOs (F)                     |
+	|850	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4168 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['16851at5338', '13496at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/10Lt.300.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/27/2020 17:57:14 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/10Lt.76.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5145 job(s) on augustus
+INFO:	[augustus]	515 of 5145 task(s) completed
+INFO:	[augustus]	1029 of 5145 task(s) completed
+INFO:	[augustus]	1544 of 5145 task(s) completed
+INFO:	[augustus]	2058 of 5145 task(s) completed
+INFO:	[augustus]	2573 of 5145 task(s) completed
+INFO:	[augustus]	3087 of 5145 task(s) completed
+INFO:	[augustus]	3602 of 5145 task(s) completed
+INFO:	[augustus]	4116 of 5145 task(s) completed
+INFO:	[augustus]	4631 of 5145 task(s) completed
+INFO:	[augustus]	5145 of 5145 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4210 job(s) on hmmsearch
+INFO:	[hmmsearch]	1263 of 4210 task(s) completed
+INFO:	[hmmsearch]	2947 of 4210 task(s) completed
+INFO:	[hmmsearch]	3789 of 4210 task(s) completed
+INFO:	[hmmsearch]	4210 of 4210 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['13496at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1546 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	155 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	310 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	464 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	619 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	773 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	928 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1083 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1237 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1392 of 1546 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1546 of 1546 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 2306
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_10Lt.76.fasta.busco as species:
+INFO:	[augustus]	363 of 3622 task(s) completed
+INFO:	[augustus]	725 of 3622 task(s) completed
+INFO:	[augustus]	1087 of 3622 task(s) completed
+INFO:	[augustus]	1449 of 3622 task(s) completed
+INFO:	[augustus]	1811 of 3622 task(s) completed
+INFO:	[augustus]	2174 of 3622 task(s) completed
+INFO:	[augustus]	2536 of 3622 task(s) completed
+INFO:	[augustus]	2898 of 3622 task(s) completed
+INFO:	[augustus]	3260 of 3622 task(s) completed
+INFO:	[augustus]	3622 of 3622 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	3899 of 3899 task(s) completed
+INFO:	Results:	C:46.2%[S:45.7%,D:0.5%],F:15.3%,M:38.5%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:46.2%[S:45.7%,D:0.5%],F:15.3%,M:38.5%,n:3870   |
+	|1787	Complete BUSCOs (C)                       |
+	|1769	Complete and single-copy BUSCOs (S)       |
+	|18	Complete and duplicated BUSCOs (D)        |
+	|592	Fragmented BUSCOs (F)                     |
+	|1491	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4447 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['13496at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/10Lt.76.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/27/2020 19:11:22 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/10Lt.SR.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5452 job(s) on augustus
+INFO:	[augustus]	546 of 5452 task(s) completed
+INFO:	[augustus]	1091 of 5452 task(s) completed
+INFO:	[augustus]	1636 of 5452 task(s) completed
+INFO:	[augustus]	2181 of 5452 task(s) completed
+INFO:	[augustus]	2727 of 5452 task(s) completed
+INFO:	[augustus]	3272 of 5452 task(s) completed
+INFO:	[augustus]	3817 of 5452 task(s) completed
+INFO:	[augustus]	4362 of 5452 task(s) completed
+INFO:	[augustus]	4907 of 5452 task(s) completed
+INFO:	[augustus]	5452 of 5452 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4810 job(s) on hmmsearch
+INFO:	[hmmsearch]	1924 of 4810 task(s) completed
+INFO:	[hmmsearch]	2886 of 4810 task(s) completed
+INFO:	[hmmsearch]	3367 of 4810 task(s) completed
+INFO:	[hmmsearch]	3848 of 4810 task(s) completed
+INFO:	[hmmsearch]	4810 of 4810 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['13496at5338', '16851at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 2048 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	205 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	410 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	615 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	820 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1025 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1229 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1434 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1639 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1844 of 2048 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2048 of 2048 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 1571
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_10Lt.SR.fasta.busco as species:
+INFO:	[augustus]	263 of 2624 task(s) completed
+INFO:	[augustus]	525 of 2624 task(s) completed
+INFO:	[augustus]	788 of 2624 task(s) completed
+INFO:	[augustus]	1050 of 2624 task(s) completed
+INFO:	[augustus]	1050 of 2624 task(s) completed
+INFO:	[augustus]	1312 of 2624 task(s) completed
+INFO:	[augustus]	1575 of 2624 task(s) completed
+INFO:	[augustus]	1837 of 2624 task(s) completed
+INFO:	[augustus]	2100 of 2624 task(s) completed
+INFO:	[augustus]	2100 of 2624 task(s) completed
+INFO:	[augustus]	2362 of 2624 task(s) completed
+INFO:	[augustus]	2624 of 2624 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	349 of 3483 task(s) completed
+INFO:	[hmmsearch]	697 of 3483 task(s) completed
+INFO:	[hmmsearch]	1045 of 3483 task(s) completed
+INFO:	[hmmsearch]	1742 of 3483 task(s) completed
+INFO:	[hmmsearch]	2090 of 3483 task(s) completed
+INFO:	[hmmsearch]	2439 of 3483 task(s) completed
+INFO:	[hmmsearch]	2787 of 3483 task(s) completed
+INFO:	[hmmsearch]	3483 of 3483 task(s) completed
+INFO:	Results:	C:64.7%[S:58.0%,D:6.7%],F:12.0%,M:23.3%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:64.7%[S:58.0%,D:6.7%],F:12.0%,M:23.3%,n:3870   |
+	|2503	Complete BUSCOs (C)                       |
+	|2244	Complete and single-copy BUSCOs (S)       |
+	|259	Complete and duplicated BUSCOs (D)        |
+	|463	Fragmented BUSCOs (F)                     |
+	|904	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4085 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['13496at5338', '16851at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/10Lt.SR.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/27/2020 20:19:27 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/11Lt.300.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5525 job(s) on augustus
+INFO:	[augustus]	553 of 5525 task(s) completed
+INFO:	[augustus]	1105 of 5525 task(s) completed
+INFO:	[augustus]	1658 of 5525 task(s) completed
+INFO:	[augustus]	2210 of 5525 task(s) completed
+INFO:	[augustus]	2763 of 5525 task(s) completed
+INFO:	[augustus]	3315 of 5525 task(s) completed
+INFO:	[augustus]	3868 of 5525 task(s) completed
+INFO:	[augustus]	4420 of 5525 task(s) completed
+INFO:	[augustus]	4973 of 5525 task(s) completed
+INFO:	[augustus]	5525 of 5525 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4799 job(s) on hmmsearch
+INFO:	[hmmsearch]	480 of 4799 task(s) completed
+INFO:	[hmmsearch]	1920 of 4799 task(s) completed
+INFO:	[hmmsearch]	2400 of 4799 task(s) completed
+INFO:	[hmmsearch]	3840 of 4799 task(s) completed
+INFO:	[hmmsearch]	4799 of 4799 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['16119at5338', '2874at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1847 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	185 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	370 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	555 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	739 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	924 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1109 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1293 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1478 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1663 of 1847 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1847 of 1847 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 1759
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_11Lt.300.fasta.busco as species:
+INFO:	[augustus]	293 of 2929 task(s) completed
+INFO:	[augustus]	586 of 2929 task(s) completed
+INFO:	[augustus]	879 of 2929 task(s) completed
+INFO:	[augustus]	1172 of 2929 task(s) completed
+INFO:	[augustus]	1465 of 2929 task(s) completed
+INFO:	[augustus]	1758 of 2929 task(s) completed
+INFO:	[augustus]	2051 of 2929 task(s) completed
+INFO:	[augustus]	2344 of 2929 task(s) completed
+INFO:	[augustus]	2637 of 2929 task(s) completed
+INFO:	[augustus]	2929 of 2929 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	1155 of 3847 task(s) completed
+INFO:	[hmmsearch]	1924 of 3847 task(s) completed
+INFO:	[hmmsearch]	3463 of 3847 task(s) completed
+INFO:	[hmmsearch]	3847 of 3847 task(s) completed
+INFO:	Results:	C:60.6%[S:53.6%,D:7.0%],F:13.3%,M:26.1%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:60.6%[S:53.6%,D:7.0%],F:13.3%,M:26.1%,n:3870   |
+	|2344	Complete BUSCOs (C)                       |
+	|2073	Complete and single-copy BUSCOs (S)       |
+	|271	Complete and duplicated BUSCOs (D)        |
+	|514	Fragmented BUSCOs (F)                     |
+	|1012	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4235 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['16119at5338', '2874at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/11Lt.300.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/27/2020 21:30:03 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/11Lt.76.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5142 job(s) on augustus
+INFO:	[augustus]	515 of 5142 task(s) completed
+INFO:	[augustus]	1029 of 5142 task(s) completed
+INFO:	[augustus]	1543 of 5142 task(s) completed
+INFO:	[augustus]	2057 of 5142 task(s) completed
+INFO:	[augustus]	2572 of 5142 task(s) completed
+INFO:	[augustus]	3086 of 5142 task(s) completed
+INFO:	[augustus]	3600 of 5142 task(s) completed
+INFO:	[augustus]	4114 of 5142 task(s) completed
+INFO:	[augustus]	4628 of 5142 task(s) completed
+INFO:	[augustus]	5142 of 5142 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4271 job(s) on hmmsearch
+INFO:	[hmmsearch]	855 of 4271 task(s) completed
+INFO:	[hmmsearch]	1709 of 4271 task(s) completed
+INFO:	[hmmsearch]	2136 of 4271 task(s) completed
+INFO:	[hmmsearch]	2990 of 4271 task(s) completed
+INFO:	[hmmsearch]	3844 of 4271 task(s) completed
+INFO:	[hmmsearch]	4271 of 4271 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['2874at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1682 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	169 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	337 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	505 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	673 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	841 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1010 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1178 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1346 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1514 of 1682 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1682 of 1682 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 2125
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_11Lt.76.fasta.busco as species:
+INFO:	[augustus]	334 of 3331 task(s) completed
+INFO:	[augustus]	667 of 3331 task(s) completed
+INFO:	[augustus]	1000 of 3331 task(s) completed
+INFO:	[augustus]	1333 of 3331 task(s) completed
+INFO:	[augustus]	1666 of 3331 task(s) completed
+INFO:	[augustus]	1999 of 3331 task(s) completed
+INFO:	[augustus]	2332 of 3331 task(s) completed
+INFO:	[augustus]	2665 of 3331 task(s) completed
+INFO:	[augustus]	2998 of 3331 task(s) completed
+INFO:	[augustus]	3331 of 3331 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	1567 of 3916 task(s) completed
+INFO:	[hmmsearch]	1959 of 3916 task(s) completed
+INFO:	[hmmsearch]	2350 of 3916 task(s) completed
+INFO:	[hmmsearch]	3916 of 3916 task(s) completed
+INFO:	Results:	C:50.8%[S:49.1%,D:1.7%],F:15.0%,M:34.2%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:50.8%[S:49.1%,D:1.7%],F:15.0%,M:34.2%,n:3870   |
+	|1967	Complete BUSCOs (C)                       |
+	|1902	Complete and single-copy BUSCOs (S)       |
+	|65	Complete and duplicated BUSCOs (D)        |
+	|581	Fragmented BUSCOs (F)                     |
+	|1322	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4335 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['2874at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/11Lt.76.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/27/2020 22:42:18 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/11Lt.HybSPADes.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5672 job(s) on augustus
+INFO:	[augustus]	568 of 5672 task(s) completed
+INFO:	[augustus]	1135 of 5672 task(s) completed
+INFO:	[augustus]	1702 of 5672 task(s) completed
+INFO:	[augustus]	2269 of 5672 task(s) completed
+INFO:	[augustus]	2837 of 5672 task(s) completed
+INFO:	[augustus]	3404 of 5672 task(s) completed
+INFO:	[augustus]	3971 of 5672 task(s) completed
+INFO:	[augustus]	4538 of 5672 task(s) completed
+INFO:	[augustus]	5105 of 5672 task(s) completed
+INFO:	[augustus]	5672 of 5672 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 5406 job(s) on hmmsearch
+INFO:	[hmmsearch]	1622 of 5406 task(s) completed
+INFO:	[hmmsearch]	2704 of 5406 task(s) completed
+INFO:	[hmmsearch]	3785 of 5406 task(s) completed
+INFO:	[hmmsearch]	5406 of 5406 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['2874at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 2329 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	233 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	466 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	699 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	932 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1165 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1398 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1631 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1864 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2097 of 2329 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2329 of 2329 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 814
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_11Lt.HybSPADes.fasta.busco as species:
+INFO:	[augustus]	128 of 1278 task(s) completed
+INFO:	[augustus]	256 of 1278 task(s) completed
+INFO:	[augustus]	384 of 1278 task(s) completed
+INFO:	[augustus]	512 of 1278 task(s) completed
+INFO:	[augustus]	639 of 1278 task(s) completed
+INFO:	[augustus]	767 of 1278 task(s) completed
+INFO:	[augustus]	895 of 1278 task(s) completed
+INFO:	[augustus]	1023 of 1278 task(s) completed
+INFO:	[augustus]	1151 of 1278 task(s) completed
+INFO:	[augustus]	1278 of 1278 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	222 of 2214 task(s) completed
+INFO:	[hmmsearch]	665 of 2214 task(s) completed
+INFO:	[hmmsearch]	1108 of 2214 task(s) completed
+INFO:	[hmmsearch]	1550 of 2214 task(s) completed
+INFO:	[hmmsearch]	1993 of 2214 task(s) completed
+INFO:	[hmmsearch]	2214 of 2214 task(s) completed
+INFO:	Results:	C:82.4%[S:63.4%,D:19.0%],F:6.3%,M:11.3%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:82.4%[S:63.4%,D:19.0%],F:6.3%,M:11.3%,n:3870   |
+	|3186	Complete BUSCOs (C)                       |
+	|2452	Complete and single-copy BUSCOs (S)       |
+	|734	Complete and duplicated BUSCOs (D)        |
+	|242	Fragmented BUSCOs (F)                     |
+	|442	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4914 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['2874at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/11Lt.HybSPADes.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 00:04:12 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/11Lt.SR.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5589 job(s) on augustus
+INFO:	[augustus]	559 of 5589 task(s) completed
+INFO:	[augustus]	1118 of 5589 task(s) completed
+INFO:	[augustus]	1677 of 5589 task(s) completed
+INFO:	[augustus]	2236 of 5589 task(s) completed
+INFO:	[augustus]	2795 of 5589 task(s) completed
+INFO:	[augustus]	3354 of 5589 task(s) completed
+INFO:	[augustus]	3913 of 5589 task(s) completed
+INFO:	[augustus]	4472 of 5589 task(s) completed
+INFO:	[augustus]	5031 of 5589 task(s) completed
+INFO:	[augustus]	5589 of 5589 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4869 job(s) on hmmsearch
+INFO:	[hmmsearch]	974 of 4869 task(s) completed
+INFO:	[hmmsearch]	1948 of 4869 task(s) completed
+INFO:	[hmmsearch]	2435 of 4869 task(s) completed
+INFO:	[hmmsearch]	3896 of 4869 task(s) completed
+INFO:	[hmmsearch]	4383 of 4869 task(s) completed
+INFO:	[hmmsearch]	4869 of 4869 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['2874at5338', '16119at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1819 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	182 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	364 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	546 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	728 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	910 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1092 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1274 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1456 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1638 of 1819 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1819 of 1819 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 1720
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_11Lt.SR.fasta.busco as species:
+INFO:	[augustus]	287 of 2868 task(s) completed
+INFO:	[augustus]	574 of 2868 task(s) completed
+INFO:	[augustus]	861 of 2868 task(s) completed
+INFO:	[augustus]	1148 of 2868 task(s) completed
+INFO:	[augustus]	1435 of 2868 task(s) completed
+INFO:	[augustus]	1721 of 2868 task(s) completed
+INFO:	[augustus]	2008 of 2868 task(s) completed
+INFO:	[augustus]	2295 of 2868 task(s) completed
+INFO:	[augustus]	2582 of 2868 task(s) completed
+INFO:	[augustus]	2868 of 2868 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	374 of 3735 task(s) completed
+INFO:	[hmmsearch]	1121 of 3735 task(s) completed
+INFO:	[hmmsearch]	1494 of 3735 task(s) completed
+INFO:	[hmmsearch]	2241 of 3735 task(s) completed
+INFO:	[hmmsearch]	2988 of 3735 task(s) completed
+INFO:	[hmmsearch]	3735 of 3735 task(s) completed
+INFO:	Results:	C:61.4%[S:52.7%,D:8.7%],F:12.8%,M:25.8%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:61.4%[S:52.7%,D:8.7%],F:12.8%,M:25.8%,n:3870   |
+	|2379	Complete BUSCOs (C)                       |
+	|2041	Complete and single-copy BUSCOs (S)       |
+	|338	Complete and duplicated BUSCOs (D)        |
+	|497	Fragmented BUSCOs (F)                     |
+	|994	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4214 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['2874at5338', '16119at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/11Lt.SR.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 01:14:26 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/36Lt.300.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 4571 job(s) on augustus
+INFO:	[augustus]	458 of 4571 task(s) completed
+INFO:	[augustus]	915 of 4571 task(s) completed
+INFO:	[augustus]	1372 of 4571 task(s) completed
+INFO:	[augustus]	1829 of 4571 task(s) completed
+INFO:	[augustus]	2286 of 4571 task(s) completed
+INFO:	[augustus]	2743 of 4571 task(s) completed
+INFO:	[augustus]	3200 of 4571 task(s) completed
+INFO:	[augustus]	3657 of 4571 task(s) completed
+INFO:	[augustus]	4114 of 4571 task(s) completed
+INFO:	[augustus]	4571 of 4571 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4561 job(s) on hmmsearch
+INFO:	[hmmsearch]	457 of 4561 task(s) completed
+INFO:	[hmmsearch]	913 of 4561 task(s) completed
+INFO:	[hmmsearch]	1825 of 4561 task(s) completed
+INFO:	[hmmsearch]	2281 of 4561 task(s) completed
+INFO:	[hmmsearch]	3193 of 4561 task(s) completed
+INFO:	[hmmsearch]	3649 of 4561 task(s) completed
+INFO:	[hmmsearch]	4561 of 4561 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 3643 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	365 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	729 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1093 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1458 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1822 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2186 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2551 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2915 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3279 of 3643 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3643 of 3643 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 178
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_36Lt.300.fasta.busco as species:
+INFO:	[augustus]	23 of 224 task(s) completed
+INFO:	[augustus]	45 of 224 task(s) completed
+INFO:	[augustus]	68 of 224 task(s) completed
+INFO:	[augustus]	90 of 224 task(s) completed
+INFO:	[augustus]	112 of 224 task(s) completed
+INFO:	[augustus]	135 of 224 task(s) completed
+INFO:	[augustus]	157 of 224 task(s) completed
+INFO:	[augustus]	180 of 224 task(s) completed
+INFO:	[augustus]	202 of 224 task(s) completed
+INFO:	[augustus]	224 of 224 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	30 of 291 task(s) completed
+INFO:	[hmmsearch]	59 of 291 task(s) completed
+INFO:	[hmmsearch]	117 of 291 task(s) completed
+INFO:	[hmmsearch]	204 of 291 task(s) completed
+INFO:	[hmmsearch]	233 of 291 task(s) completed
+INFO:	[hmmsearch]	262 of 291 task(s) completed
+INFO:	[hmmsearch]	291 of 291 task(s) completed
+INFO:	Results:	C:97.3%[S:96.0%,D:1.3%],F:0.8%,M:1.9%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:97.3%[S:96.0%,D:1.3%],F:0.8%,M:1.9%,n:3870     |
+	|3764	Complete BUSCOs (C)                       |
+	|3715	Complete and single-copy BUSCOs (S)       |
+	|49	Complete and duplicated BUSCOs (D)        |
+	|31	Fragmented BUSCOs (F)                     |
+	|75	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 2789 seconds
+INFO:	Results written in ../out/busco/36Lt.300.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 02:00:56 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/36Lt.76.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 4549 job(s) on augustus
+INFO:	[augustus]	455 of 4549 task(s) completed
+INFO:	[augustus]	910 of 4549 task(s) completed
+INFO:	[augustus]	1365 of 4549 task(s) completed
+INFO:	[augustus]	1820 of 4549 task(s) completed
+INFO:	[augustus]	2275 of 4549 task(s) completed
+INFO:	[augustus]	2730 of 4549 task(s) completed
+INFO:	[augustus]	3185 of 4549 task(s) completed
+INFO:	[augustus]	3640 of 4549 task(s) completed
+INFO:	[augustus]	4095 of 4549 task(s) completed
+INFO:	[augustus]	4549 of 4549 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4541 job(s) on hmmsearch
+INFO:	[hmmsearch]	909 of 4541 task(s) completed
+INFO:	[hmmsearch]	3179 of 4541 task(s) completed
+INFO:	[hmmsearch]	4541 of 4541 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 3661 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	367 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	733 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1099 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1465 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1831 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2197 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2563 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2929 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3295 of 3661 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3661 of 3661 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 173
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_36Lt.76.fasta.busco as species:
+INFO:	[augustus]	22 of 219 task(s) completed
+INFO:	[augustus]	44 of 219 task(s) completed
+INFO:	[augustus]	66 of 219 task(s) completed
+INFO:	[augustus]	88 of 219 task(s) completed
+INFO:	[augustus]	110 of 219 task(s) completed
+INFO:	[augustus]	132 of 219 task(s) completed
+INFO:	[augustus]	154 of 219 task(s) completed
+INFO:	[augustus]	176 of 219 task(s) completed
+INFO:	[augustus]	198 of 219 task(s) completed
+INFO:	[augustus]	219 of 219 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	166 of 331 task(s) completed
+INFO:	[hmmsearch]	199 of 331 task(s) completed
+INFO:	[hmmsearch]	265 of 331 task(s) completed
+INFO:	[hmmsearch]	298 of 331 task(s) completed
+INFO:	[hmmsearch]	331 of 331 task(s) completed
+INFO:	Results:	C:97.4%[S:96.4%,D:1.0%],F:0.7%,M:1.9%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:97.4%[S:96.4%,D:1.0%],F:0.7%,M:1.9%,n:3870     |
+	|3769	Complete BUSCOs (C)                       |
+	|3732	Complete and single-copy BUSCOs (S)       |
+	|37	Complete and duplicated BUSCOs (D)        |
+	|28	Fragmented BUSCOs (F)                     |
+	|73	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 2812 seconds
+INFO:	Results written in ../out/busco/36Lt.76.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 02:47:48 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/36Lt.HybSPADes.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 4553 job(s) on augustus
+INFO:	[augustus]	456 of 4553 task(s) completed
+INFO:	[augustus]	911 of 4553 task(s) completed
+INFO:	[augustus]	1366 of 4553 task(s) completed
+INFO:	[augustus]	1822 of 4553 task(s) completed
+INFO:	[augustus]	2277 of 4553 task(s) completed
+INFO:	[augustus]	2732 of 4553 task(s) completed
+INFO:	[augustus]	3188 of 4553 task(s) completed
+INFO:	[augustus]	3643 of 4553 task(s) completed
+INFO:	[augustus]	4098 of 4553 task(s) completed
+INFO:	[augustus]	4553 of 4553 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4548 job(s) on hmmsearch
+INFO:	[hmmsearch]	455 of 4548 task(s) completed
+INFO:	[hmmsearch]	910 of 4548 task(s) completed
+INFO:	[hmmsearch]	2729 of 4548 task(s) completed
+INFO:	[hmmsearch]	3184 of 4548 task(s) completed
+INFO:	[hmmsearch]	3639 of 4548 task(s) completed
+INFO:	[hmmsearch]	4548 of 4548 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 3658 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	366 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	732 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1098 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1464 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1830 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2195 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2561 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2927 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3293 of 3658 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3658 of 3658 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 161
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_36Lt.HybSPADes.fasta.busco as species:
+INFO:	[augustus]	20 of 195 task(s) completed
+INFO:	[augustus]	39 of 195 task(s) completed
+INFO:	[augustus]	59 of 195 task(s) completed
+INFO:	[augustus]	78 of 195 task(s) completed
+INFO:	[augustus]	98 of 195 task(s) completed
+INFO:	[augustus]	117 of 195 task(s) completed
+INFO:	[augustus]	137 of 195 task(s) completed
+INFO:	[augustus]	156 of 195 task(s) completed
+INFO:	[augustus]	176 of 195 task(s) completed
+INFO:	[augustus]	195 of 195 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	184 of 306 task(s) completed
+INFO:	[hmmsearch]	306 of 306 task(s) completed
+INFO:	Results:	C:97.6%[S:96.3%,D:1.3%],F:0.5%,M:1.9%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:97.6%[S:96.3%,D:1.3%],F:0.5%,M:1.9%,n:3870     |
+	|3777	Complete BUSCOs (C)                       |
+	|3726	Complete and single-copy BUSCOs (S)       |
+	|51	Complete and duplicated BUSCOs (D)        |
+	|20	Fragmented BUSCOs (F)                     |
+	|73	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 3069 seconds
+INFO:	Results written in ../out/busco/36Lt.HybSPADes.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 03:38:57 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/36Lt.SR.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 4572 job(s) on augustus
+INFO:	[augustus]	458 of 4572 task(s) completed
+INFO:	[augustus]	915 of 4572 task(s) completed
+INFO:	[augustus]	1372 of 4572 task(s) completed
+INFO:	[augustus]	1829 of 4572 task(s) completed
+INFO:	[augustus]	2286 of 4572 task(s) completed
+INFO:	[augustus]	2744 of 4572 task(s) completed
+INFO:	[augustus]	3201 of 4572 task(s) completed
+INFO:	[augustus]	3658 of 4572 task(s) completed
+INFO:	[augustus]	4115 of 4572 task(s) completed
+INFO:	[augustus]	4572 of 4572 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4567 job(s) on hmmsearch
+INFO:	[hmmsearch]	2284 of 4567 task(s) completed
+INFO:	[hmmsearch]	2741 of 4567 task(s) completed
+INFO:	[hmmsearch]	3197 of 4567 task(s) completed
+INFO:	[hmmsearch]	3654 of 4567 task(s) completed
+INFO:	[hmmsearch]	4567 of 4567 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 3667 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	367 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	734 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1101 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1467 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1834 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2201 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2567 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	2934 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3301 of 3667 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	3667 of 3667 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 156
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_36Lt.SR.fasta.busco as species:
+INFO:	[augustus]	19 of 190 task(s) completed
+INFO:	[augustus]	38 of 190 task(s) completed
+INFO:	[augustus]	57 of 190 task(s) completed
+INFO:	[augustus]	76 of 190 task(s) completed
+INFO:	[augustus]	95 of 190 task(s) completed
+INFO:	[augustus]	114 of 190 task(s) completed
+INFO:	[augustus]	133 of 190 task(s) completed
+INFO:	[augustus]	152 of 190 task(s) completed
+INFO:	[augustus]	171 of 190 task(s) completed
+INFO:	[augustus]	190 of 190 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	25 of 245 task(s) completed
+INFO:	[hmmsearch]	74 of 245 task(s) completed
+INFO:	[hmmsearch]	123 of 245 task(s) completed
+INFO:	[hmmsearch]	172 of 245 task(s) completed
+INFO:	[hmmsearch]	245 of 245 task(s) completed
+INFO:	Results:	C:97.5%[S:96.3%,D:1.2%],F:0.6%,M:1.9%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:97.5%[S:96.3%,D:1.2%],F:0.6%,M:1.9%,n:3870     |
+	|3775	Complete BUSCOs (C)                       |
+	|3728	Complete and single-copy BUSCOs (S)       |
+	|47	Complete and duplicated BUSCOs (D)        |
+	|23	Fragmented BUSCOs (F)                     |
+	|72	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 2800 seconds
+INFO:	Results written in ../out/busco/36Lt.SR.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 04:25:37 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/75Lt.300.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5717 job(s) on augustus
+INFO:	[augustus]	572 of 5717 task(s) completed
+INFO:	[augustus]	1144 of 5717 task(s) completed
+INFO:	[augustus]	1716 of 5717 task(s) completed
+INFO:	[augustus]	2287 of 5717 task(s) completed
+INFO:	[augustus]	2859 of 5717 task(s) completed
+INFO:	[augustus]	3431 of 5717 task(s) completed
+INFO:	[augustus]	4002 of 5717 task(s) completed
+INFO:	[augustus]	4574 of 5717 task(s) completed
+INFO:	[augustus]	5146 of 5717 task(s) completed
+INFO:	[augustus]	5717 of 5717 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4910 job(s) on hmmsearch
+INFO:	[hmmsearch]	982 of 4910 task(s) completed
+INFO:	[hmmsearch]	1473 of 4910 task(s) completed
+INFO:	[hmmsearch]	3437 of 4910 task(s) completed
+INFO:	[hmmsearch]	4910 of 4910 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['2874at5338', '13496at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1659 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	166 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	332 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	498 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	664 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	830 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	996 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1162 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1328 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1494 of 1659 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1659 of 1659 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 1860
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_75Lt.300.fasta.busco as species:
+INFO:	[augustus]	316 of 3152 task(s) completed
+INFO:	[augustus]	631 of 3152 task(s) completed
+INFO:	[augustus]	946 of 3152 task(s) completed
+INFO:	[augustus]	1261 of 3152 task(s) completed
+INFO:	[augustus]	1576 of 3152 task(s) completed
+INFO:	[augustus]	1892 of 3152 task(s) completed
+INFO:	[augustus]	2207 of 3152 task(s) completed
+INFO:	[augustus]	2522 of 3152 task(s) completed
+INFO:	[augustus]	2837 of 3152 task(s) completed
+INFO:	[augustus]	3152 of 3152 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	793 of 3961 task(s) completed
+INFO:	[hmmsearch]	3961 of 3961 task(s) completed
+INFO:	Results:	C:57.8%[S:48.4%,D:9.4%],F:13.2%,M:29.0%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:57.8%[S:48.4%,D:9.4%],F:13.2%,M:29.0%,n:3870   |
+	|2235	Complete BUSCOs (C)                       |
+	|1872	Complete and single-copy BUSCOs (S)       |
+	|363	Complete and duplicated BUSCOs (D)        |
+	|512	Fragmented BUSCOs (F)                     |
+	|1123	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4175 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['2874at5338', '13496at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/75Lt.300.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 05:35:12 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/75Lt.76.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5289 job(s) on augustus
+INFO:	[augustus]	529 of 5289 task(s) completed
+INFO:	[augustus]	1058 of 5289 task(s) completed
+INFO:	[augustus]	1587 of 5289 task(s) completed
+INFO:	[augustus]	2116 of 5289 task(s) completed
+INFO:	[augustus]	2645 of 5289 task(s) completed
+INFO:	[augustus]	3174 of 5289 task(s) completed
+INFO:	[augustus]	3703 of 5289 task(s) completed
+INFO:	[augustus]	4232 of 5289 task(s) completed
+INFO:	[augustus]	4761 of 5289 task(s) completed
+INFO:	[augustus]	5289 of 5289 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4268 job(s) on hmmsearch
+INFO:	[hmmsearch]	2561 of 4268 task(s) completed
+INFO:	[hmmsearch]	2988 of 4268 task(s) completed
+INFO:	[hmmsearch]	3415 of 4268 task(s) completed
+INFO:	[hmmsearch]	3842 of 4268 task(s) completed
+INFO:	[hmmsearch]	4268 of 4268 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['16851at5338', '2874at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1562 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	157 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	313 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	469 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	625 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	781 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	938 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1094 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1250 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1406 of 1562 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1562 of 1562 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 2204
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_75Lt.76.fasta.busco as species:
+INFO:	[augustus]	354 of 3531 task(s) completed
+INFO:	[augustus]	707 of 3531 task(s) completed
+INFO:	[augustus]	1060 of 3531 task(s) completed
+INFO:	[augustus]	1413 of 3531 task(s) completed
+INFO:	[augustus]	1766 of 3531 task(s) completed
+INFO:	[augustus]	2119 of 3531 task(s) completed
+INFO:	[augustus]	2472 of 3531 task(s) completed
+INFO:	[augustus]	2825 of 3531 task(s) completed
+INFO:	[augustus]	3178 of 3531 task(s) completed
+INFO:	[augustus]	3531 of 3531 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	803 of 4014 task(s) completed
+INFO:	[hmmsearch]	1205 of 4014 task(s) completed
+INFO:	[hmmsearch]	2810 of 4014 task(s) completed
+INFO:	[hmmsearch]	4014 of 4014 task(s) completed
+INFO:	Results:	C:48.1%[S:45.4%,D:2.7%],F:14.0%,M:37.9%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:48.1%[S:45.4%,D:2.7%],F:14.0%,M:37.9%,n:3870   |
+	|1863	Complete BUSCOs (C)                       |
+	|1758	Complete and single-copy BUSCOs (S)       |
+	|105	Complete and duplicated BUSCOs (D)        |
+	|541	Fragmented BUSCOs (F)                     |
+	|1466	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4166 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['16851at5338', '2874at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/75Lt.76.fasta.busco
+
+INFO:	***** Start a BUSCO v4.0.5 analysis, current time: 07/28/2020 06:44:38 *****
+INFO:	Configuring BUSCO with /space21/PGE/rangeles/Busco/bin/myconfig.ini
+INFO:	Mode is genome
+INFO:	Input file is /space21/PGE/rangeles/LtG/res/Assemblies/75Lt.SR.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset agaricales_odb10 (eukaryota, 2019-11-20)
+INFO:	Creating BLAST database with input file
+INFO:	Running 1 job(s) on makeblastdb
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using aspergillus_nidulans as species:
+INFO:	Running 5901 job(s) on augustus
+INFO:	[augustus]	591 of 5901 task(s) completed
+INFO:	[augustus]	1181 of 5901 task(s) completed
+INFO:	[augustus]	1771 of 5901 task(s) completed
+INFO:	[augustus]	2361 of 5901 task(s) completed
+INFO:	[augustus]	2951 of 5901 task(s) completed
+INFO:	[augustus]	3541 of 5901 task(s) completed
+INFO:	[augustus]	4131 of 5901 task(s) completed
+INFO:	[augustus]	4721 of 5901 task(s) completed
+INFO:	[augustus]	5311 of 5901 task(s) completed
+INFO:	[augustus]	5901 of 5901 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 5342 job(s) on hmmsearch
+INFO:	[hmmsearch]	535 of 5342 task(s) completed
+INFO:	[hmmsearch]	1603 of 5342 task(s) completed
+INFO:	[hmmsearch]	2137 of 5342 task(s) completed
+INFO:	[hmmsearch]	3740 of 5342 task(s) completed
+INFO:	[hmmsearch]	4274 of 5342 task(s) completed
+INFO:	[hmmsearch]	4808 of 5342 task(s) completed
+INFO:	[hmmsearch]	5342 of 5342 task(s) completed
+INFO:	Starting second step of analysis. The gene predictor Augustus is retrained using the results from the initial run to yield more accurate results.
+INFO:	Extracting missing and fragmented buscos from the file ancestral_variants...
+WARNING:	The BUSCO ID(s) ['13496at5338'] were not found in the file ancestral_variants
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Training Augustus using Single-Copy Complete BUSCOs:
+INFO:	Converting predicted genes to short genbank files
+INFO:	Running 1740 job(s) on gff2gbSmallDNA.pl
+INFO:	[gff2gbSmallDNA.pl]	174 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	348 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	522 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	696 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	870 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1044 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1218 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1392 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1566 of 1740 task(s) completed
+INFO:	[gff2gbSmallDNA.pl]	1740 of 1740 task(s) completed
+INFO:	All files converted to short genbank files, now running the training scripts
+INFO:	Running 1 job(s) on new_species.pl
+INFO:	[new_species.pl]	1 of 1 task(s) completed
+INFO:	Running 1 job(s) on etraining
+INFO:	[etraining]	1 of 1 task(s) completed
+INFO:	Re-running Augustus with the new metaparameters, number of target BUSCOs: 1558
+INFO:	Running Augustus gene predictor on BLAST search results.
+INFO:	Running Augustus prediction using BUSCO_75Lt.SR.fasta.busco as species:
+INFO:	[augustus]	270 of 2697 task(s) completed
+INFO:	[augustus]	540 of 2697 task(s) completed
+INFO:	[augustus]	810 of 2697 task(s) completed
+INFO:	[augustus]	1079 of 2697 task(s) completed
+INFO:	[augustus]	1349 of 2697 task(s) completed
+INFO:	[augustus]	1619 of 2697 task(s) completed
+INFO:	[augustus]	1888 of 2697 task(s) completed
+INFO:	[augustus]	2158 of 2697 task(s) completed
+INFO:	[augustus]	2428 of 2697 task(s) completed
+INFO:	[augustus]	2697 of 2697 task(s) completed
+INFO:	Extracting predicted proteins...
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	[hmmsearch]	2320 of 3866 task(s) completed
+INFO:	[hmmsearch]	3866 of 3866 task(s) completed
+INFO:	Results:	C:65.1%[S:49.9%,D:15.2%],F:13.1%,M:21.8%,n:3870	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset agaricales_odb10            |
+	--------------------------------------------------
+	|C:65.1%[S:49.9%,D:15.2%],F:13.1%,M:21.8%,n:3870  |
+	|2520	Complete BUSCOs (C)                       |
+	|1933	Complete and single-copy BUSCOs (S)       |
+	|587	Complete and duplicated BUSCOs (D)        |
+	|508	Fragmented BUSCOs (F)                     |
+	|842	Missing BUSCOs (M)                        |
+	|3870	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done with WARNING(s). Total running time: 4136 seconds
+
+***** Summary of warnings: *****
+WARNING:busco.BuscoTools	The BUSCO ID(s) ['13496at5338'] were not found in the file ancestral_variants
+
+INFO:	Results written in ../out/busco/75Lt.SR.fasta.busco
+

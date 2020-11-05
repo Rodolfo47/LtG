@@ -1,0 +1,56 @@
+Your inserted inputs on [SSPACE_Standard_v3.0_linux] at Fri Jul 17 19:50:56 2020:
+Required inputs: 
+	-l = ../../bin/lib75Lt.300.txt
+		Number of paired files = 1
+	-s = ../spades/75Lt.300/scaffolds.fasta
+	-b = 75Lt.300
+
+Optional inputs:
+	-x = 1
+	-z = 0
+	-k = 5
+	-g = 0
+	-a = 0.7
+	-n = 15
+	-T = 30
+	-p = 0
+
+Contig extension inputs:
+	-o = 20
+	-m = 32
+	-r = 0.9
+
+
+=>Fri Jul 17 19:50:56 2020: Reading, filtering and converting input sequences of library file initiated
+
+------------------------------------------------------------
+
+=>Fri Jul 17 19:51:24 2020: Extending of contigs with unmapped reads
+
+=>Fri Jul 17 19:51:24 2020: Building BWA index for contigs
+
+=>Fri Jul 17 19:52:45 2020: Mapping reads to contigs with BWA
+
+=>Fri Jul 17 20:13:49 2020: Contig extension initiated
+
+LIBRARY lib1
+------------------------------------------------------------
+
+=>Fri Jul 17 20:15:57 2020: Reading contig file
+
+=>Fri Jul 17 20:15:59 2020: Building BWA index for contigs
+
+=>Fri Jul 17 20:16:54 2020: Mapping reads to contigs with BWA
+
+=>Fri Jul 17 20:29:53 2020: Building scaffolds file
+
+=>Fri Jul 17 20:29:57 2020: Merging contigs and creating fasta file of scaffolds
+
+------------------------------------------------------------
+
+=>Fri Jul 17 20:30:38 2020: Creating summary file
+**************************************************
+
+Process run succesfully on Fri Jul 17 20:30:38 2020 in 39 minutes and 42 seconds
+
+

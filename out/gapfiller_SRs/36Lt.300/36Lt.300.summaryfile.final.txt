@@ -1,0 +1,468 @@
+Your inserted inputs on [GapFiller_v1-10] at Sat Jul 25 21:41:15 2020:
+	-s ../sspace/36Lt.300/36Lt.300.final.scaffolds.fasta
+	-l ../../bin/lib36Lt.300.txt
+	-b 36Lt.300
+	-o 2
+	-m 29
+	-r 0.7
+	-n 10
+	-T 16
+	-g 1
+	-d 50
+	-t 10
+	-i 10
+
+After iteration 1:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 55 out of 925 gaps 
+	Closed 50039 out of 93529 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54800813
+			Total number of N's = 75029
+			Sum (bp) no N's = 54725784
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2880
+		N25 = 83632
+		N50 = 37281
+		N75 = 10947
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54827254
+			Total number of N's = 43490
+			Sum (bp) no N's = 54783764
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2881
+		N25 = 83143
+		N50 = 37281
+		N75 = 10937
+
+------------------------------------------------------------
+
+After iteration 2:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 34 out of 870 gaps 
+	Closed 6291 out of 43490 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54827254
+			Total number of N's = 43490
+			Sum (bp) no N's = 54783764
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2881
+		N25 = 83143
+		N50 = 37281
+		N75 = 10937
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54847276
+			Total number of N's = 37199
+			Sum (bp) no N's = 54810077
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2882
+		N25 = 83143
+		N50 = 37246
+		N75 = 10947
+
+------------------------------------------------------------
+
+After iteration 3:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 3 out of 836 gaps 
+	Closed 2452 out of 37199 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54847276
+			Total number of N's = 37199
+			Sum (bp) no N's = 54810077
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2882
+		N25 = 83143
+		N50 = 37246
+		N75 = 10947
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54862687
+			Total number of N's = 34747
+			Sum (bp) no N's = 54827940
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2883
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+------------------------------------------------------------
+
+After iteration 4:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 2 out of 833 gaps 
+	Closed 1904 out of 34747 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54862687
+			Total number of N's = 34747
+			Sum (bp) no N's = 54827940
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2883
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54875392
+			Total number of N's = 32843
+			Sum (bp) no N's = 54842549
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2884
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+------------------------------------------------------------
+
+After iteration 5:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 1 out of 831 gaps 
+	Closed 584 out of 32843 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54875392
+			Total number of N's = 32843
+			Sum (bp) no N's = 54842549
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2884
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54886061
+			Total number of N's = 32259
+			Sum (bp) no N's = 54853802
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2884
+		N25 = 83143
+		N50 = 37246
+		N75 = 10924
+
+------------------------------------------------------------
+
+After iteration 6:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 2 out of 830 gaps 
+	Closed 403 out of 32259 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54886061
+			Total number of N's = 32259
+			Sum (bp) no N's = 54853802
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2884
+		N25 = 83143
+		N50 = 37246
+		N75 = 10924
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54895355
+			Total number of N's = 31856
+			Sum (bp) no N's = 54863499
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2885
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+------------------------------------------------------------
+
+After iteration 7:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 1 out of 828 gaps 
+	Closed 650 out of 31856 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54895355
+			Total number of N's = 31856
+			Sum (bp) no N's = 54863499
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2885
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54903275
+			Total number of N's = 31206
+			Sum (bp) no N's = 54872069
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2885
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+------------------------------------------------------------
+
+After iteration 8:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 2 out of 827 gaps 
+	Closed 863 out of 31206 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54903275
+			Total number of N's = 31206
+			Sum (bp) no N's = 54872069
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2885
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54910102
+			Total number of N's = 30343
+			Sum (bp) no N's = 54879759
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2885
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+------------------------------------------------------------
+
+After iteration 9:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 1 out of 825 gaps 
+	Closed 510 out of 30343 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54910102
+			Total number of N's = 30343
+			Sum (bp) no N's = 54879759
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2885
+		N25 = 83143
+		N50 = 37246
+		N75 = 10937
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54916808
+			Total number of N's = 29833
+			Sum (bp) no N's = 54886975
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2886
+		N25 = 83143
+		N50 = 37246
+		N75 = 10924
+
+------------------------------------------------------------
+
+After iteration 10:
+------------------------------------------------------------
+
+
+GAPCLOSING STATS:
+------------------------------------------------------------
+
+	Closed 0 out of 824 gaps 
+	Closed 391 out of 29833 nucleotides
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+ Scaffold statistics:
+------------------------------------------------------------
+
+	Original:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54916808
+			Total number of N's = 29833
+			Sum (bp) no N's = 54886975
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2886
+		N25 = 83143
+		N50 = 37246
+		N75 = 10924
+
+	After gapclosing:
+		Total number of scaffolds = 19027
+		Sum (bp) = 54923370
+			Total number of N's = 29442
+			Sum (bp) no N's = 54893928
+		GC Content = 46.96%
+		Max scaffold size = 568425
+		Min scaffold size = 119
+		Average scaffold size = 2886
+		N25 = 83143
+		N50 = 37199
+		N75 = 10924
+
+------------------------------------------------------------
+
+
+Process run succesfully on Sat Jul 25 22:10:15 2020 in 29 minutes and 0 seconds
+
+

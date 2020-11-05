@@ -1,0 +1,138 @@
+READING READS Lib1:
+------------------------------------------------------------
+	Total inserted pairs = 2026603 
+------------------------------------------------------------
+
+READING READS Lib2:
+------------------------------------------------------------
+	Total inserted pairs = 26470997 
+------------------------------------------------------------
+
+CONTIG EXTENSION:
+------------------------------------------------------------
+
+	Number of contig sequences =114483
+	Number of unmapped reads used for contig extension = 3126959
+	Number of contigs extended = 11986
+	Number of bases extended = 181852
+------------------------------------------------------------
+
+
+LIBRARY Lib1 STATS:
+################################################################################
+
+MAPPING READS TO CONTIGS:
+------------------------------------------------------------
+	Number of single reads found on contigs = 1275094
+	Number of read-pairs used for pairing contigs / total pairs = 489092 / 489121
+------------------------------------------------------------
+
+READ PAIRS STATS:
+	Assembled pairs: 489092 (978184 sequences)
+		Satisfied in distance/logic within contigs (i.e. -> <-, distance on target: 700 +/-70): 26168
+		Unsatisfied in distance within contigs (i.e. distance out-of-bounds): 323923
+		Unsatisfied pairing logic within contigs (i.e. illogical pairing ->->, <-<- or <-->): 252
+		---
+		Satisfied in distance/logic within a given contig pair (pre-scaffold): 47527
+		Unsatisfied in distance within a given contig pair (i.e. calculated distances out-of-bounds): 91222
+		---
+	Total satisfied: 73695	unsatisfied: 415397
+
+
+	Estimated insert size statistics (based on 26168 pairs): 
+		Mean insert size = 682
+		Median insert size = 676
+
+REPEATS: 
+	Number of repeated edges = 22
+------------------------------------------------------------
+
+################################################################################
+
+
+LIBRARY Lib2 STATS:
+################################################################################
+
+MAPPING READS TO CONTIGS:
+------------------------------------------------------------
+	Number of single reads found on contigs = 7306334
+	Number of read-pairs used for pairing contigs / total pairs = 1841486 / 1843739
+------------------------------------------------------------
+
+READ PAIRS STATS:
+	Assembled pairs: 1841486 (3682972 sequences)
+		Satisfied in distance/logic within contigs (i.e. -> <-, distance on target: 150 +/-15): 10320
+		Unsatisfied in distance within contigs (i.e. distance out-of-bounds): 140688
+		Unsatisfied pairing logic within contigs (i.e. illogical pairing ->->, <-<- or <-->): 1177
+		---
+		Satisfied in distance/logic within a given contig pair (pre-scaffold): 15147
+		Unsatisfied in distance within a given contig pair (i.e. calculated distances out-of-bounds): 1674154
+		---
+	Total satisfied: 25467	unsatisfied: 1816019
+
+
+	Estimated insert size statistics (based on 10320 pairs): 
+		Mean insert size = 148
+		Median insert size = 148
+
+REPEATS: 
+	Number of repeated edges = 10
+------------------------------------------------------------
+
+################################################################################
+
+SUMMARY: 
+------------------------------------------------------------
+	Inserted contig file;
+		Total number of contigs = 114483
+		Sum (bp) = 96572530
+			Total number of N's = 194509
+			Sum (bp) no N's = 96378021
+		GC Content = 46.95%
+		Max contig size = 90679
+		Min contig size = 125
+		Average contig size = 843
+		N25 = 6734
+		N50 = 2539
+		N75 = 620
+
+	After extension;
+		Total number of contigs = 114483
+		Sum (bp) = 96754382
+			Total number of N's = 194509
+			Sum (bp) no N's = 96559873
+		GC Content = 46.94%
+		Max contig size = 90813
+		Min contig size = 125
+		Average contig size = 845
+		N25 = 6722
+		N50 = 2532
+		N75 = 619
+
+	After scaffolding Lib1:
+		Total number of scaffolds = 114130
+		Sum (bp) = 96761151
+			Total number of N's = 202301
+			Sum (bp) no N's = 96558850
+		GC Content = 46.94%
+		Max scaffold size = 91162
+		Min scaffold size = 125
+		Average scaffold size = 847
+		N25 = 6771
+		N50 = 2568
+		N75 = 623
+
+	After scaffolding Lib2:
+		Total number of scaffolds = 114118
+		Sum (bp) = 96761163
+			Total number of N's = 202313
+			Sum (bp) no N's = 96558850
+		GC Content = 46.94%
+		Max scaffold size = 91162
+		Min scaffold size = 125
+		Average scaffold size = 847
+		N25 = 6771
+		N50 = 2568
+		N75 = 623
+
+------------------------------------------------------------

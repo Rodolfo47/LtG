@@ -1,0 +1,1 @@
+lib1 bwa ../../data/11Lt.300.R1_val_1.fq ../../data/11Lt.300.R2_val_2.fq 700 0.1 FR

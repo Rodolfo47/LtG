@@ -1,0 +1,14 @@
+# BUSCO version is: 4.0.5 
+# The lineage dataset is: agaricales_odb10 (Creation date: 2019-11-20, number of species: 25, number of BUSCOs: 3870)
+# Summarized benchmarking in BUSCO notation for file /space21/PGE/rangeles/LtG/res/Assemblies/10Lt.76.fasta
+# BUSCO was run in mode: genome
+
+	***** Results: *****
+
+	C:46.2%[S:45.7%,D:0.5%],F:15.3%,M:38.5%,n:3870	   
+	1787	Complete BUSCOs (C)			   
+	1769	Complete and single-copy BUSCOs (S)	   
+	18	Complete and duplicated BUSCOs (D)	   
+	592	Fragmented BUSCOs (F)			   
+	1491	Missing BUSCOs (M)			   
+	3870	Total BUSCO groups searched		   

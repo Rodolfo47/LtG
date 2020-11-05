@@ -1,0 +1,12 @@
+10Lt.300.fasta
+10Lt.76.fasta
+10Lt.SR.fasta
+11Lt.300.fasta
+11Lt.76.fasta
+11Lt.SR.fasta
+36Lt.300.fasta
+36Lt.76.fasta
+36Lt.SR.fasta
+75Lt.300.fasta
+75Lt.76.fasta
+75Lt.SR.fasta
