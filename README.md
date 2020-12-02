@@ -2,7 +2,7 @@
 
 This is the repository of the paper:
 
-Ángeles-Argáiz *et al.* 2020. **Long-read sequencing decompresses *Laccaria trichodermophora* (CA15-11, CA15-75, CA15-F10 and EF-36) strains genome assemblies and reveal its intraspecific genome diversity.** Genes, Genomes, Genetics.
+Ángeles-Argáiz *et al.* in prep. **Long-read sequencing decompresses *Laccaria trichodermophora* (CA15-11, CA15-75, CA15-F10 and EF-36) strains genome assemblies and reveal its intraspecific genome diversity.** for Genes, Genomes, Genetics.
 
 
 
